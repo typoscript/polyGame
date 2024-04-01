@@ -17,6 +17,8 @@ public class UnitManager {
 		heroes.add(new Warrior());
 		heroes.add(new Mage());
 		heroes.add(new Healer());
+		
+		spawnMonsters(heroes.size());
 	}
 	
 	public List<Unit> getHeroes() {
@@ -24,10 +26,10 @@ public class UnitManager {
 	}
 
 	public List<Unit> getMonsters() {
-		return heroes;
+		return monsters;
 	}
 	
-	public void spawnMonsters(int monsterCount) {
+	private void spawnMonsters(int monsterCount) {
 		for (int i = 0; i < monsterCount; i++) {
 			int num = (int)(Math.random() * monsterClassNames.length);
 			try {
