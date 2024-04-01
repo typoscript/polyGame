@@ -36,6 +36,7 @@ public class Mage extends Unit implements Actionable {
 		
 		while (true) {
 			System.out.printf("[%s] 1) 공격 2) 공격력 증가 스킬\n", name);
+			System.out.print("메뉴: ");
 			
 			int action = GameManager.sc.nextInt();
 			
