@@ -11,6 +11,7 @@ public class Warrior extends Unit {
 		this.attackPower = INIT_ATTACK_POWER;
 	}
 	
+	@Override
 	public void attack(Unit target) {
 		target.decreaseHp(attackPower);
 
