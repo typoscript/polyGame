@@ -7,6 +7,18 @@ public abstract class Unit {
 	protected String name;
 	protected UnitStatus status = UnitStatus.NORMAL;
 	
+	public String getName() {
+		return name;
+	}
+
+	public UnitStatus getStatus() {
+		return status;
+	}
+	
+	public void setStatus(UnitStatus status) {
+		this.status = status;
+	}
+	
 	public void decreaseHp(int hp) {
 		this.hp -= hp;
 		
