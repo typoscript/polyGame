@@ -26,8 +26,9 @@ public class Warrior extends Unit implements Actionable {
 		final int ATTACK = 1;
 		
 		while (true) {
-			System.out.printf("[%s] 1) 공격", name);
-			
+			System.out.printf("[%s] 1) 공격\n", name);
+			System.out.print("메뉴: ");
+
 			int action = GameManager.sc.nextInt();
 			
 			switch (action) {
