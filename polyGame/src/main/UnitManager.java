@@ -3,8 +3,22 @@ package main;
 import java.util.ArrayList;
 
 public class UnitManager {
-	ArrayList<Unit> players = new ArrayList<>();
-	ArrayList<Unit> monsters = new ArrayList<>();
-	private final String PATH = "main.";
+	private ArrayList<Unit> players = new ArrayList<>();
+	private ArrayList<Unit> monsters = new ArrayList<>();
+	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
+	
+	public void spawnMonsters(int monsterCount) {
+		for (int i = 0; i < monsterCount; i++) {
+			int num = (int)(Math.random() * monsterClassNames.length);
+			try {
+				Class<?> clazz = Class.forName(PATH + monsterClassNames[num]);
+				Object obj = clazz.getDeclaredConstructor().newInstance(); // clazz.newInstance();
+				Unit temp = (Unit) obj;
+				monsters.add(temp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
