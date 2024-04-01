@@ -1,12 +1,21 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UnitManager {
-	private ArrayList<Unit> heores = new ArrayList<>();
+	private ArrayList<Unit> heroes = new ArrayList<>();
 	private ArrayList<Unit> monsters = new ArrayList<>();
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
+	
+	public List<Unit> getHeroes() {
+		return heroes;
+	}
+
+	public List<Unit> getMonsters() {
+		return heroes;
+	}
 	
 	public void spawnMonsters(int monsterCount) {
 		for (int i = 0; i < monsterCount; i++) {
