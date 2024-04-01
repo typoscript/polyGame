@@ -5,13 +5,7 @@ public abstract class Unit {
 	protected int maxHp;
 	protected int attackPower;
 	protected String name;
-	
-	public Unit(String name, int hp, int maxHp, int attackPower) {
-		this.name = name;
-		this.hp = hp;
-		this.maxHp = maxHp;
-		this.attackPower = attackPower;
-	}
+	protected UnitStatus status = UnitStatus.NORMAL;
 	
 	public void decreaseHp(int hp) {
 		this.hp -= hp;
