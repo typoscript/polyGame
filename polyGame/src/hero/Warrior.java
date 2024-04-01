@@ -1,8 +1,9 @@
 package hero;
 
+import main.GameManager;
 import main.Unit;
 
-public class Warrior extends Unit {
+public class Warrior extends Unit implements Actionable {
 	private final int INIT_ATTACK_POWER = 30;
 	private final int INIT_MAX_HP = 200;
 
@@ -18,5 +19,27 @@ public class Warrior extends Unit {
 		target.decreaseHp(attackPower);
 
 		System.out.printf("몸둥이 공격 ([%d] 데미지)\n", attackPower);
+	}
+
+	@Override
+	public void chooseAction(Unit target) {
+		final int ATTACK = 1;
+		
+		while (true) {
+			System.out.printf("[%s] 1) 공격 \n", name);
+			
+			int action = GameManager.sc.nextInt();
+			
+			switch (action) {
+				case ATTACK:
+					attack(target);
+					return;
+			}
+		}
+		
+	}
+
+	@Override
+	public void chooseAction(Unit firstTarget, Unit secondTarget) {
 	}
 }
