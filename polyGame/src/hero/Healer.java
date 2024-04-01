@@ -1,4 +1,6 @@
-package main;
+package hero;
+
+import main.Unit;
 
 public class Healer extends Unit {
 	private final int INIT_ATTACK_POWER = 10;
@@ -25,6 +27,6 @@ public class Healer extends Unit {
 	public void heal(Unit target) {
 		target.increaseHp(healPower);
 		
-		System.out.printf("%s에게 치료 ([%d]hp 회복)\n", target.name, healPower);
+		System.out.printf("%s에게 치료 ([%d]hp 회복)\n", target.getName(), healPower);
 	}
 }
