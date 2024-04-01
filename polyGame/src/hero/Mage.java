@@ -1,4 +1,6 @@
-package main;
+package hero;
+
+import main.Unit;
 
 public class Mage extends Unit {
 	private final int INIT_ATTACK_POWER = 20;
