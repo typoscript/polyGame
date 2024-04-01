@@ -10,4 +10,10 @@ public class Warrior extends Unit {
 		this.hp = INIT_MAX_HP;
 		this.maxHp = INIT_MAX_HP;
 	}
+	
+	public void attack(Unit target) {
+		target.decreaseHp(attackPower);
+
+		System.out.printf("몸둥이 공격 ([%d] 데미지)\n", attackPower);
+	}
 }
