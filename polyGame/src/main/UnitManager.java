@@ -3,11 +3,21 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
+import hero.Healer;
+import hero.Mage;
+import hero.Warrior;
+
 public class UnitManager {
 	private ArrayList<Unit> heroes = new ArrayList<>();
 	private ArrayList<Unit> monsters = new ArrayList<>();
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
+	
+	public UnitManager() {
+		heroes.add(new Warrior());
+		heroes.add(new Mage());
+		heroes.add(new Healer());
+	}
 	
 	public List<Unit> getHeroes() {
 		return heroes;
