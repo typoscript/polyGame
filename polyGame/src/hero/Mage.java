@@ -1,8 +1,9 @@
 package hero;
 
+import main.GameManager;
 import main.Unit;
 
-public class Mage extends Unit {
+public class Mage extends Unit implements Actionable {
 	private final int INIT_ATTACK_POWER = 20;
 	private final int INIT_MAX_HP = 100;
 
@@ -26,5 +27,31 @@ public class Mage extends Unit {
 		this.attackPower += attackPower;
 		
 		System.out.printf("공격력 추가 상승 (+%d)", attackPower);
+	}
+
+	@Override
+	public void chooseAction(Unit target) {
+		final int ATTACK = 1;
+		final int SKILL = 2;
+		
+		while (true) {
+			System.out.printf("[%s] 1) 공격 2) 공격력 증가 스킬\n", name);
+			
+			int action = GameManager.sc.nextInt();
+			
+			switch (action) {
+				case ATTACK:
+					attack(target);
+					return;
+				case SKILL:
+					increaseAttackPower();
+					return;
+			}
+		}
+		
+	}
+
+	@Override
+	public void chooseAction(Unit firstTarget, Unit secondTarget) {
 	}
 }
