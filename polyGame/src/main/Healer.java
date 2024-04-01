@@ -15,6 +15,7 @@ public class Healer extends Unit {
 		this.healPower = INIT_HEAL_POWER;
 	}
 	
+	@Override
 	public void attack(Unit target) {
 		target.decreaseHp(attackPower);
 
