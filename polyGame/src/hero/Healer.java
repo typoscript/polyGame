@@ -32,12 +32,17 @@ public class Healer extends Unit implements Actionable {
 	}
 
 	@Override
+	public void chooseAction(Unit target) {
+	}
+
+	@Override
 	public void chooseAction(Unit attackTarget, Unit healTarget) {
 		final int ATTACK = 1;
 		final int HEAL = 2;
 		
 		while (true) {
 			System.out.printf("[%s] 1) 공격 2) 힐\n", name);
+			System.out.print("메뉴: ");
 			
 			int action = GameManager.sc.nextInt();
 			
@@ -50,9 +55,5 @@ public class Healer extends Unit implements Actionable {
 					return;
 			}
 		}
-	}
-
-	@Override
-	public void chooseAction(Unit target) {
 	}
 }
