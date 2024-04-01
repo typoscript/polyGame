@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 
 public class UnitManager {
-	private ArrayList<Unit> players = new ArrayList<>();
+	private ArrayList<Unit> heores = new ArrayList<>();
 	private ArrayList<Unit> monsters = new ArrayList<>();
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
@@ -19,6 +19,7 @@ public class UnitManager {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			System.out.println(monsters.get(i).name);
 		}
 	}
 }
