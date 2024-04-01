@@ -1,4 +1,6 @@
-package main;
+package hero;
+
+import main.Unit;
 
 public class Warrior extends Unit {
 	private final int INIT_ATTACK_POWER = 30;
