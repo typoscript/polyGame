@@ -26,7 +26,7 @@ public class Mage extends Unit implements Actionable {
 
 		this.attackPower += attackPower;
 		
-		System.out.printf("공격력 추가 상승 (+%d)", attackPower);
+		System.out.printf("공격력 추가 상승 (+%d)\n", attackPower);
 	}
 
 	@Override
