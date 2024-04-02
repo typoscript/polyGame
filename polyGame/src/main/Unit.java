@@ -22,25 +22,25 @@ public abstract class Unit {
 	public void decreaseHp(int hp) {
 		this.hp -= hp;
 		
-		if (hp < 0)
-			hp = 0;
+		if (this.hp < 0)
+			this.hp = 0;
 	}
 	
 	public void increaseHp(int hp) {
 		this.hp += hp;
 		
-		if (hp > maxHp)
-			hp = maxHp;
+		if (this.hp > maxHp)
+			this.hp = maxHp;
 	}
 	
 	public boolean isDead() {
 		return hp == 0;
 	}
 	
-	abstract public void attack(Unit target);
-	
 	@Override
 	public String toString() {
 		return String.format("%s | HP: %d | 공격력: %d | 상태: %s", name, hp, attackPower, status);
 	}
+
+	abstract public void attack(Unit target);
 }
