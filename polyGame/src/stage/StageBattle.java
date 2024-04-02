@@ -14,6 +14,18 @@ public class StageBattle extends Stage {
 	List<Unit> heroes = new ArrayList<Unit>();
 	List<Unit> monsters = new ArrayList<Unit>();
 	
+	private void printUnitAll() {
+		System.out.println("== hereos ==");
+		for (Unit hero : heroes)
+			System.out.println(hero);
+		System.out.println("============");
+
+		System.out.println("== Monsters ==");
+		for (Unit monster : monsters)
+			System.out.println(monster);
+		System.out.println("==============");
+	}
+	
 	@Override
 	public void init() {
 		heroes = unitManager.getHeroes();
