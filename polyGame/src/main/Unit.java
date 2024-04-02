@@ -37,7 +37,7 @@ public abstract class Unit {
 		return hp == 0;
 	}
 	
-	public boolean canTakeAction() {
+	public boolean isSilent() {
 		return status == UnitStatus.NORMAL;
 	}
 	
