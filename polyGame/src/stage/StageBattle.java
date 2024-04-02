@@ -104,6 +104,10 @@ public class StageBattle extends Stage {
 	@Override
 	public void init() {
 		heroes = unitManager.getHeroes();
+		
+		if (monsters.isEmpty())
+			unitManager.spawnMonsters();
+		
 		monsters = unitManager.getMonsters();
 	}
 
