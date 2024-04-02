@@ -11,14 +11,6 @@ public class Mage extends Unit implements Actionable {
 		attackPower = 20;
 	}
 	
-	@Override
-	public void attack(Unit target) {
-		target.decreaseHp(attackPower);
-
-		System.out.printf("%s에게 지팡이 공격 ([%d] 데미지)\n", target.getName(), attackPower);
-		System.out.println(target);
-	}
-	
 	public void increaseAttackPower() {
 		this.attackPower += getRandomAttackPower();
 		
@@ -28,6 +20,15 @@ public class Mage extends Unit implements Actionable {
 	public int getRandomAttackPower() {
 		return (int)(Math.random() * 30);
 	}
+
+	@Override
+	public void attack(Unit target) {
+		target.decreaseHp(attackPower);
+
+		System.out.printf("%s에게 지팡이 공격 ([%d] 데미지)\n", target.getName(), attackPower);
+		System.out.println(target);
+	}
+	
 
 	@Override
 	public void chooseAction(Unit target) {
@@ -58,6 +59,5 @@ public class Mage extends Unit implements Actionable {
 	}
 
 	@Override
-	public void chooseAction(Unit firstTarget, Unit secondTarget) {
-	}
+	public void chooseAction(Unit firstTarget, Unit secondTarget) { }
 }
