@@ -29,6 +29,10 @@ public class UnitManager {
 		return monsters;
 	}
 	
+	public boolean isMonstersAllDead() {
+		spawnMonsters(GameManager.getStageLevel());
+	}
+	
 	private void spawnMonsters(int monsterCount) {
 		for (int i = 0; i < monsterCount; i++) {
 			int num = (int)(Math.random() * monsterClassNames.length);
@@ -40,7 +44,6 @@ public class UnitManager {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println(monsters.get(i).name);
 		}
 	}
 }
