@@ -98,7 +98,7 @@ public class StageBattle extends Stage {
 	}
 	
 	private boolean isRunning() {
-		return heroes.size() > 0 || monsters.size() > 0;
+		return heroes.size() > 0 && monsters.size() > 0;
 	}
 
 	@Override
