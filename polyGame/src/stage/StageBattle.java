@@ -105,7 +105,7 @@ public class StageBattle extends Stage {
 	public void init() {
 		heroes = unitManager.getHeroes();
 		
-		if (monsters.isEmpty())
+		if (unitManager.isMonsterAllDead())
 			unitManager.spawnMonsters();
 		
 		monsters = unitManager.getMonsters();
