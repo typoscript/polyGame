@@ -5,18 +5,14 @@ import main.Unit;
 import main.UnitStatus;
 
 public class Healer extends Unit implements Actionable {
-	private final int INIT_ATTACK_POWER = 10;
-	private final int INIT_HEAL_POWER = 10;
-	private final int INIT_MAX_HP = 150;
-	
 	private int healPower;
 
 	public Healer() {
 		this.name = "의사";
-		this.hp = INIT_MAX_HP;
-		this.maxHp = INIT_MAX_HP;
-		this.attackPower = INIT_ATTACK_POWER;
-		this.healPower = INIT_HEAL_POWER;
+		this.hp = 150;
+		this.maxHp = 150;
+		this.attackPower = 10;
+		this.healPower = 10;
 	}
 	
 	@Override
