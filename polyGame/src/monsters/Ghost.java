@@ -13,10 +13,10 @@ public class Ghost extends Unit {
 	
 	@Override
 	public void attack(Unit target) {
-		silentTarget(target);
+		silenceTarget(target);
 	}
 	
-	public void silentTarget(Unit target) {
+	public void silenceTarget(Unit target) {
 		target.setStatus(UnitStatus.SILENT);
 
 		System.out.printf("%s 1턴 침묵\n", target.getName());
