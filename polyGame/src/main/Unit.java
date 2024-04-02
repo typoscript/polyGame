@@ -38,7 +38,7 @@ public abstract class Unit {
 	}
 	
 	public boolean isSilent() {
-		return status == UnitStatus.NORMAL;
+		return status == UnitStatus.SILENT;
 	}
 	
 	public void handleSilence() {
