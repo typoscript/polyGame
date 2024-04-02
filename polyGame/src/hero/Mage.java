@@ -34,6 +34,11 @@ public class Mage extends Unit implements Actionable {
 	public void chooseAction(Unit target) {
 		final int ATTACK = 1;
 		final int SKILL = 2;
+
+		if (isSilent()) {
+			handleSilence();
+			return;
+		}
 		
 		while (true) {
 			System.out.printf("[%s] 1) 공격 2) 공격력 증가 스킬\n", name);
