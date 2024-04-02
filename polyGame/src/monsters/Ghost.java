@@ -4,14 +4,11 @@ import main.Unit;
 import main.UnitStatus;
 
 public class Ghost extends Unit {
-	private final int INIT_ATTACK_POWER = 0;
-	private final int INIT_MAX_HP = 50;
-
 	public Ghost() {
-		this.name = "유령";
-		this.hp = INIT_MAX_HP;
-		this.maxHp = INIT_MAX_HP;
-		this.attackPower = INIT_ATTACK_POWER;
+		name = "유령";
+		maxHp = 50;
+		hp = maxHp;
+		attackPower = 0;
 	}
 	
 	@Override
