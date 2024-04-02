@@ -4,14 +4,11 @@ import main.GameManager;
 import main.Unit;
 
 public class Mage extends Unit implements Actionable {
-	private final int INIT_ATTACK_POWER = 20;
-	private final int INIT_MAX_HP = 100;
-
 	public Mage() {
 		this.name = "마법사";
-		this.hp = INIT_MAX_HP;
-		this.maxHp = INIT_MAX_HP;
-		this.attackPower = INIT_ATTACK_POWER;
+		this.hp = 100;
+		this.maxHp = 100;
+		this.attackPower = 20;
 	}
 	
 	@Override
