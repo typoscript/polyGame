@@ -8,11 +8,11 @@ public class Healer extends Unit implements Actionable {
 	private int healPower;
 
 	public Healer() {
-		this.name = "의사";
-		this.hp = 150;
-		this.maxHp = 150;
-		this.attackPower = 10;
-		this.healPower = 10;
+		name = "의사";
+		maxHp = 150;
+		hp = maxHp;
+		attackPower = 10;
+		healPower = 10;
 	}
 	
 	@Override
