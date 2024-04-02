@@ -30,8 +30,7 @@ public class Healer extends Unit implements Actionable {
 	}
 	
 	@Override
-	public void chooseAction(Unit target) {
-	}
+	public void chooseAction(Unit target) { }
 
 	@Override
 	public void chooseAction(Unit attackTarget, Unit healTarget) {
