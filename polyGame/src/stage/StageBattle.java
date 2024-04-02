@@ -36,6 +36,9 @@ public class StageBattle extends Stage {
 		return monsters.get(ranIdx);
 	}
 	
+	private boolean isRunning() {
+		return heroes.size() > 0 || monsters.size() > 0;
+	}
 
 	@Override
 	public void init() {
