@@ -44,6 +44,5 @@ public class Warrior extends Unit implements Actionable {
 	}
 
 	@Override
-	public void chooseAction(Unit firstTarget, Unit secondTarget) {
-	}
+	public void chooseAction(Unit firstTarget, Unit secondTarget) { }
 }
