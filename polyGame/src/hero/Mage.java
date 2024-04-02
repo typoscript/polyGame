@@ -5,10 +5,10 @@ import main.Unit;
 
 public class Mage extends Unit implements Actionable {
 	public Mage() {
-		this.name = "마법사";
-		this.hp = 100;
-		this.maxHp = 100;
-		this.attackPower = 20;
+		name = "마법사";
+		maxHp = 100;
+		hp = maxHp;
+		attackPower = 20;
 	}
 	
 	@Override
