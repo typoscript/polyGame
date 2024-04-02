@@ -25,6 +25,11 @@ public class Warrior extends Unit implements Actionable {
 	@Override
 	public void chooseAction(Unit target) {
 		final int ATTACK = 1;
+
+		if (isSilent()) {
+			handleSilence();
+			return;
+		}
 		
 		while (true) {
 			System.out.printf("[%s] 1) 공격\n", name);
