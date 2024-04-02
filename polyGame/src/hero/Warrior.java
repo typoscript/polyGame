@@ -4,14 +4,11 @@ import main.GameManager;
 import main.Unit;
 
 public class Warrior extends Unit implements Actionable {
-	private final int INIT_ATTACK_POWER = 30;
-	private final int INIT_MAX_HP = 200;
-
 	public Warrior() {
 		this.name = "전사";
-		this.hp = INIT_MAX_HP;
-		this.maxHp = INIT_MAX_HP;
-		this.attackPower = INIT_ATTACK_POWER;
+		this.maxHp = 200;
+		this.hp = this.maxHp;
+		this.attackPower = 30;
 	}
 	
 	@Override
