@@ -37,6 +37,10 @@ public abstract class Unit {
 		return hp == 0;
 	}
 	
+	public boolean canAttack() {
+		return status == UnitStatus.NORMAL;
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%s | HP: %d | 공격력: %d | 상태: %s", name, hp, attackPower, status);
