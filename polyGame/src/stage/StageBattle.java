@@ -47,9 +47,8 @@ public class StageBattle extends Stage {
 	}
 
 	private void takeTurnHeroes() {
-		for (Unit hero : heroes) {
+		for (Unit hero : heroes)
 			takeActionHero((Actionable) hero);
-		}
 	}
 	
 	private void takeActionHero(Actionable hero) {
