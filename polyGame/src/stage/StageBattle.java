@@ -11,9 +11,9 @@ import main.UnitManager;
 import main.UnitStatus;
 
 public class StageBattle extends Stage {
-	UnitManager unitManager = new UnitManager();
-	List<Unit> heroes = new ArrayList<Unit>();
-	List<Unit> monsters = new ArrayList<Unit>();
+	private UnitManager unitManager = new UnitManager();
+	private List<Unit> heroes = new ArrayList<Unit>();
+	private List<Unit> monsters = new ArrayList<Unit>();
 	
 	private void printUnitAll() {
 		System.out.println("== hereos ==");
