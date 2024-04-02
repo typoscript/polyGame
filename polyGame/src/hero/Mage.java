@@ -28,6 +28,10 @@ public class Mage extends Unit implements Actionable {
 		System.out.printf("공격력 추가 상승 (+%d)\n", attackPower);
 	}
 	
+	public int getRandomAttackPower() {
+		return (int)(Math.random() * 30);
+	}
+
 	@Override
 	public void chooseAction(Unit target) {
 		final int ATTACK = 1;
