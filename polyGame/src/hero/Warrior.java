@@ -5,10 +5,10 @@ import main.Unit;
 
 public class Warrior extends Unit implements Actionable {
 	public Warrior() {
-		this.name = "전사";
-		this.maxHp = 200;
-		this.hp = this.maxHp;
-		this.attackPower = 30;
+		name = "전사";
+		maxHp = 200;
+		hp = maxHp;
+		attackPower = 30;
 	}
 	
 	@Override
