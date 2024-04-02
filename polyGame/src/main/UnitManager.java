@@ -30,7 +30,7 @@ public class UnitManager {
 	}
 	
 	public boolean isMonsterAllDead() {
-		spawnMonsters(GameManager.getStageLevel());
+		return monsters.isEmpty();
 	}
 	
 	private void spawnMonsters(int monsterCount) {
