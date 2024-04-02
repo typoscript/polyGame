@@ -7,14 +7,13 @@ public class StageLobby extends Stage {
 	private final int MENU_QUIT = 2;
 
 	@Override
-	public void init() {
-	}
+	public void init() { }
 
 	@Override
 	public void run() {
-		System.out.println("=== 로비 ====");
+		System.out.printf("=== 로비 (현재 스테이지 %d) ====\n", GameManager.getStageLevel());
 		System.out.println("1) 전투 2) 종료");
-		System.out.println("===========");
+		System.out.println("==========================");
 		
 		while (true) {
 			System.out.print("메뉴: ");
