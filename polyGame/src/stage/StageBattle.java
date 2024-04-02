@@ -26,6 +26,17 @@ public class StageBattle extends Stage {
 		System.out.println("==============");
 	}
 	
+	private Unit getRandomHero() {
+		int ranIdx = (int)(Math.random() * heroes.size());
+		return heroes.get(ranIdx);
+	}
+
+	private Unit getRandomMonster() {
+		int ranIdx = (int)(Math.random() * monsters.size());
+		return monsters.get(ranIdx);
+	}
+	
+
 	@Override
 	public void init() {
 		heroes = unitManager.getHeroes();
