@@ -30,6 +30,12 @@ public class UnitManager {
 		return monsters.isEmpty();
 	}
 	
+	public void spawnHeroes() {
+		heroes.add(new Warrior());
+		heroes.add(new Mage());
+		heroes.add(new Healer());
+	}
+
 	public void spawnMonsters() {
 		spawnMonsters(GameManager.getStageLevel());
 	}
