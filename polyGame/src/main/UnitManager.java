@@ -32,6 +32,10 @@ public class UnitManager {
 	public boolean isMonsterAllDead() {
 		return monsters.isEmpty();
 	}
+
+	public void spawnMonsters() {
+		spawnMonsters(GameManager.getStageLevel());
+	}
 	
 	private void spawnMonsters(int monsterCount) {
 		for (int i = 0; i < monsterCount; i++) {
