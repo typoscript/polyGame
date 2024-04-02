@@ -12,7 +12,7 @@ import stage.StageName;
 public class GameManager {
 	public static Scanner sc = new Scanner(System.in);
 	public static boolean isRunning = true;
-	private int stageLevel = 1;
+	private static int stageLevel = 1;
 	private Map<StageName, Stage> stages = new HashMap<StageName, Stage>();
 	private StageName currentStage;
 	
@@ -21,6 +21,10 @@ public class GameManager {
 		stages.put(StageName.BATTLE, new StageBattle());
 		
 		currentStage = StageName.LOBBY;
+	}
+	
+	public static int getStageLevel() {
+		return stageLevel;
 	}
 
 	public void run() {
