@@ -2,6 +2,7 @@ package hero;
 
 import main.GameManager;
 import main.Unit;
+import main.UnitStatus;
 
 public class Healer extends Unit implements Actionable {
 	private final int INIT_ATTACK_POWER = 10;
@@ -40,6 +41,11 @@ public class Healer extends Unit implements Actionable {
 	public void chooseAction(Unit attackTarget, Unit healTarget) {
 		final int ATTACK = 1;
 		final int HEAL = 2;
+		
+		if (isSilent()) {
+			handleSilence();
+			return;
+		}
 		
 		while (true) {
 			System.out.printf("[%s] 1) 공격 2) 힐\n", name);
