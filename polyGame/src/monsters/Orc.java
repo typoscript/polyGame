@@ -25,7 +25,8 @@ public class Orc extends Unit {
 		
 		target.decreaseHp(attackPower);
 
-		System.out.printf("철퇴 공격 ([%d] 데미지)\n", attackPower);
+		System.out.printf("%s에게 철퇴 공격 ([%d] 데미지)\n", target.getName(), attackPower);
+		System.out.println(target);
 	}
 
 }
