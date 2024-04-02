@@ -14,6 +14,12 @@ public class Healer extends Unit implements Actionable {
 		attackPower = 10;
 		healPower = 10;
 	}
+
+	public void heal(Unit target) {
+		target.increaseHp(healPower);
+		
+		System.out.printf("%s에게 치료 ([%d]hp 회복)\n", target.getName(), healPower);
+	}
 	
 	@Override
 	public void attack(Unit target) {
@@ -23,12 +29,6 @@ public class Healer extends Unit implements Actionable {
 		System.out.println(target);
 	}
 	
-	public void heal(Unit target) {
-		target.increaseHp(healPower);
-		
-		System.out.printf("%s에게 치료 ([%d]hp 회복)\n", target.getName(), healPower);
-	}
-
 	@Override
 	public void chooseAction(Unit target) {
 	}
