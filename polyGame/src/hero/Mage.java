@@ -18,7 +18,8 @@ public class Mage extends Unit implements Actionable {
 	public void attack(Unit target) {
 		target.decreaseHp(attackPower);
 
-		System.out.printf("지팡이 공격 ([%d] 데미지)\n", attackPower);
+		System.out.printf("%s에게 지팡이 공격 ([%d] 데미지)\n", target.getName(), attackPower);
+		System.out.println(target);
 	}
 	
 	public void increaseAttackPower() {
