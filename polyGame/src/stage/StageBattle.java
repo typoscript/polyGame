@@ -38,6 +38,8 @@ public class StageBattle extends Stage {
 	
 	private void attackRandomHero(Unit monster) {
 		monster.attack(getRandomHero());
+		
+		handleUnitDead();
 	}
 
 	private void takeTurnHeroes() {
