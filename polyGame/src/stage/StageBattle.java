@@ -38,6 +38,9 @@ public class StageBattle extends Stage {
 	}
 	
 	private void attackRandomHero(Unit monster) {
+		if (heroes.isEmpty())
+			return;
+
 		monster.attack(getRandomHero());
 		
 		handleUnitDead();
