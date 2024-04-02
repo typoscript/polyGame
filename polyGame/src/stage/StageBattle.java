@@ -62,6 +62,22 @@ public class StageBattle extends Stage {
 			attackRandomHero(monster);
 	}
 	
+	private void handleUnitDead() {
+		for (int i = 0; i < heroes.size(); i++) {
+			Unit hero = heroes.get(i);
+
+			if (hero.isDead())
+				heroes.remove(hero);
+		}
+
+		for (int i = 0; i < monsters.size(); i++) {
+			Unit monster = monsters.get(i);
+
+			if (monster.isDead())
+				heroes.remove(monster);
+		}
+	}
+	
 	private boolean isRunning() {
 		return heroes.size() > 0 || monsters.size() > 0;
 	}
