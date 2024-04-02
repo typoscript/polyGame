@@ -8,6 +8,7 @@ import hero.Healer;
 import main.GameManager;
 import main.Unit;
 import main.UnitManager;
+import main.UnitStatus;
 
 public class StageBattle extends Stage {
 	UnitManager unitManager = new UnitManager();
@@ -49,8 +50,11 @@ public class StageBattle extends Stage {
 	}
 	
 	private void takeActionHero(Actionable hero) {
-		Unit monster = getRandomMonster();
+		if (monsters.isEmpty())
+			return;
 
+		Unit monster = getRandomMonster();
+		
 		if (hero instanceof Healer)
 			hero.chooseAction(monster, getRandomHero());
 		else
@@ -60,8 +64,14 @@ public class StageBattle extends Stage {
 	}
 	
 	private void attackHeroesByMonsters() {
-		for (Unit monster : monsters)
+		for (Unit monster : monsters) {
 			attackRandomHero(monster);
+			
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+			}
+		}
 	}
 	
 	private void handleUnitDead() {
