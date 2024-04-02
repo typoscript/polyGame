@@ -3,14 +3,11 @@ package monsters;
 import main.Unit;
 
 public class Orc extends Unit {
-	private final int INIT_ATTACK_POWER = 30;
-	private final int INIT_MAX_HP = 300;
-
 	public Orc() {
-		this.name = "오크";
-		this.hp = INIT_MAX_HP;
-		this.maxHp = INIT_MAX_HP;
-		this.attackPower = INIT_ATTACK_POWER;
+		name = "오크";
+		maxHp = 300;
+		hp = maxHp;
+		attackPower = 30;
 	}
 	
 	@Override
