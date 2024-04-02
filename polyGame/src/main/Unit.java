@@ -41,6 +41,11 @@ public abstract class Unit {
 		return status == UnitStatus.NORMAL;
 	}
 	
+	public void handleSilence() {
+		System.out.println("침묵으로 이번 턴 실행 불가능");
+		status = UnitStatus.NORMAL;
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%s | HP: %d | 공격력: %d | 상태: %s", name, hp, attackPower, status);
