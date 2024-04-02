@@ -36,6 +36,27 @@ public class StageBattle extends Stage {
 		return monsters.get(ranIdx);
 	}
 	
+	private void attackRandomHero(Unit monster) {
+		monster.attack(getRandomHero());
+	}
+
+	private void takeTurnHeroes() {
+		for (Unit hero : heroes) {
+			takeActionHero((Actionable) hero);
+		}
+	}
+	
+	private void takeActionHero(Actionable hero) {
+		Unit monster = getRandomMonster();
+
+		if (hero instanceof Healer)
+			hero.chooseAction(monster, getRandomHero());
+		else
+			hero.chooseAction(monster);
+		
+		handleUnitDead();
+	}
+	
 	private boolean isRunning() {
 		return heroes.size() > 0 || monsters.size() > 0;
 	}
