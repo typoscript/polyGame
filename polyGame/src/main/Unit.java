@@ -42,7 +42,7 @@ public abstract class Unit {
 	}
 	
 	public void handleSilence() {
-		System.out.println("침묵으로 이번 턴 실행 불가능");
+		System.out.printf("%s는 침묵으로 이번 턴 실행 불가능\n", name);
 		status = UnitStatus.NORMAL;
 	}
 	
