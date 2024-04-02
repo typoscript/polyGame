@@ -57,7 +57,7 @@ public class StageBattle extends Stage {
 		handleUnitDead();
 	}
 	
-	private void monstersAttackHeroes() {
+	private void attackHeroesByMonsters() {
 		for (Unit monster : monsters)
 			attackRandomHero(monster);
 	}
@@ -79,8 +79,8 @@ public class StageBattle extends Stage {
 		while (isRunning()) {
 			printUnitAll();
 			
-			heroesTakeTurn();
-			monstersAttackHeroes();
+			takeTurnHeroes();
+			attackHeroesByMonsters();
 		}
 		
 		if (heroes.size() == 0)
