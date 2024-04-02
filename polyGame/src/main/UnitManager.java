@@ -14,10 +14,7 @@ public class UnitManager {
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
 	
 	public UnitManager() {
-		heroes.add(new Warrior());
-		heroes.add(new Mage());
-		heroes.add(new Healer());
-		
+		spawnHeroes();
 		spawnMonsters(GameManager.getStageLevel());
 	}
 	
@@ -32,7 +29,7 @@ public class UnitManager {
 	public boolean isMonsterAllDead() {
 		return monsters.isEmpty();
 	}
-
+	
 	public void spawnMonsters() {
 		spawnMonsters(GameManager.getStageLevel());
 	}
