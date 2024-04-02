@@ -18,7 +18,7 @@ public class UnitManager {
 		heroes.add(new Mage());
 		heroes.add(new Healer());
 		
-		spawnMonsters(heroes.size());
+		spawnMonsters(GameManager.getStageLevel());
 	}
 	
 	public List<Unit> getHeroes() {
@@ -29,7 +29,7 @@ public class UnitManager {
 		return monsters;
 	}
 	
-	public boolean isMonstersAllDead() {
+	public boolean isMonsterAllDead() {
 		spawnMonsters(GameManager.getStageLevel());
 	}
 	
