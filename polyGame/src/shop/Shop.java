@@ -17,7 +17,7 @@ public class Shop {
 	private List<ItemArmor> itemArmors = new ArrayList<>();
 	private List<ItemUsable> itemUsables = new ArrayList<>();
 	
-	private void run() {
+	public void run() {
 		while (true) {
 			printMenu();
 			int menu = Input.getInputNumber("메뉴");
