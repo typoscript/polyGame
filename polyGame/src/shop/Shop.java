@@ -10,6 +10,7 @@ import item.ItemUsable;
 import item.ItemWeapon;
 import main.FileManager;
 import main.Input;
+import main.Player;
 
 public class Shop {
 	private final int MENU_BUY_ITEM = 1;
@@ -105,7 +106,7 @@ public class Shop {
 		if (item.PRICE > Player.guild.getMoney())
 			System.out.println("돈 부족으로 구매 불가");
 		
-		Player.guild.addItem();
+		Player.guild.addItem(item);
 	}
 
 	private void runSellItem() {
