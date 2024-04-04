@@ -8,12 +8,16 @@ import hero.Mage;
 import hero.Warrior;
 
 public class UnitManager {
+	private UnitManager instance = new UnitManager();
 	private ArrayList<Unit> heroes = new ArrayList<>();
 	private ArrayList<Unit> monsters = new ArrayList<>();
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
 	
-	private UnitManager() { }
+	private UnitManager() {
+		spawnHeroes();
+		spawnMonsters(GameManager.getStageLevel())
+	}
 	
 	public List<Unit> getHeroes() {
 		return heroes;
