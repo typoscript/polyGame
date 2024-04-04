@@ -38,9 +38,17 @@ public abstract class Hero extends Unit {
 		this.armor = armor;
 	}
 	
+	public void unEquipWeapon() {
+		this.weapon = null;
+	}
+
+	public void unEquipArmor() {
+		this.armor = null;
+	}
+	
 	public String getStatusOfWearables() {
-		String statusWeapon = weapon == null ? "없음" : "있음";
-		String statusArmor = armor == null ? "없음" : "있음";
+		String statusWeapon = hasWeapon() ? "있음" : "없음";
+		String statusArmor = hasArmor() ? "있음" : "없음";
 
 		return String.format("무기: %s | 방어구: %s\n", statusWeapon, statusArmor);
 	}
