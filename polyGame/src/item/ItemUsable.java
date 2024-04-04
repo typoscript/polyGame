@@ -1,5 +1,7 @@
 package item;
 
+import main.Unit;
+
 public interface ItemUsable {
-	public void use();
+	public void use(Unit target);
 }
