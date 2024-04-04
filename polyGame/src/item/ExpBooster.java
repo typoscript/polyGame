@@ -1,5 +1,6 @@
 package item;
 
+import hero.Hero;
 import main.Unit;
 
 public class ExpBooster extends Item implements Usable {
@@ -9,6 +10,7 @@ public class ExpBooster extends Item implements Usable {
 
 	@Override
 	public void use(Unit target) {
-		target.increaseExpGain();
+		Hero hero = (Hero)target;
+		hero.increaseExpGain();
 	}
 }
