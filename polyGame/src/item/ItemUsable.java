@@ -1,5 +1,7 @@
 package item;
 
+import main.Unit;
+
 public class ItemUsable extends Item implements Usable {
 	final int STAT;
 
@@ -7,4 +9,7 @@ public class ItemUsable extends Item implements Usable {
 		super(name, price);
 		this.STAT = stat;
 	}
+
+	@Override
+	public void use(Unit target) { }
 }
