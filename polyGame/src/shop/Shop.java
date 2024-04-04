@@ -11,6 +11,7 @@ import item.ItemWeapon;
 import main.FileManager;
 import main.Input;
 import main.Player;
+import main.Print;
 
 public class Shop {
 	private final int MENU_BUY_ITEM = 1;
@@ -110,9 +111,9 @@ public class Shop {
 	}
 
 	private void runSellItem() {
-		Player.guild.printItemAll();
-		
 		List<Item> items = Player.guild.getItemAll();
+		
+		Print.printListWithListNumber(items);
 		
 		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
 
