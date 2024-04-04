@@ -6,6 +6,17 @@ import shop.Shop;
 public class StageMarket extends Stage {
 	Shop shop;
 	UnitManager unitManager;
+	
+	private void printMenu() {
+		System.out.println("=== 시장 ===");
+		System.out.println("1) 길드 관리");
+		System.out.println("2) 상점");
+		System.out.println("3) 인벤토리");
+		System.out.println("4) 데이터 저장");
+		System.out.println("5) 데이터 불러오기");
+		System.out.println("0) 뒤로가기");
+		System.out.println("==========");
+	}
 
 	@Override
 	public void init() {
@@ -15,6 +26,6 @@ public class StageMarket extends Stage {
 
 	@Override
 	public StageName run() {
-		return null;
+		return StageName.LOBBY;
 	}
 }
