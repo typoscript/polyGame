@@ -3,6 +3,7 @@ package hero;
 import java.util.List;
 
 import item.Armor;
+import item.ItemArmor;
 import item.ItemUsable;
 import item.ItemWeapon;
 import item.Weapon;
@@ -47,8 +48,12 @@ public abstract class Hero extends Unit {
 		return weapon;
 	}
 
-	public void unEquipArmor() {
+	public ItemArmor unEquipArmor() {
+		ItemArmor armor = ((ItemArmor)this.armor).clone();
+
 		this.armor = null;
+
+		return armor;
 	}
 	
 	public String getStatusOfWearables() {
