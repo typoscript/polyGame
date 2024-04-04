@@ -1,6 +1,6 @@
 package hero;
 
-import main.GameManager;
+import main.Input;
 import main.Unit;
 
 public class Warrior extends Unit implements Actionable {
@@ -30,9 +30,7 @@ public class Warrior extends Unit implements Actionable {
 		
 		while (true) {
 			System.out.printf("[%s] 1) 공격\n", name);
-			System.out.print("메뉴: ");
-
-			int action = GameManager.sc.nextInt();
+			int action = Input.getInputNumber("메뉴");
 			
 			switch (action) {
 				case ATTACK:
