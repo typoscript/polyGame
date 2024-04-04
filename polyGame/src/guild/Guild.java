@@ -12,6 +12,10 @@ public class Guild {
 	public List<Item> getItemAll() {
 		return items;
 	}
+
+	public void addItem(Item item) {
+		items.add(item);
+	}
 	
 	public void deleteItem(Item item) {
 		items.remove(item);
