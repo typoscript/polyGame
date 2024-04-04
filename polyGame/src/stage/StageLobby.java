@@ -5,7 +5,7 @@ import main.GameManager;
 public class StageLobby extends Stage {
 	private final int MENU_BATTLE = 1;
 	private final int MENU_QUIT = 2;
-	private final int MENU_SETTING = 3;
+	private final int MENU_MARKET = 3;
 
 	@Override
 	public void init() { }
@@ -22,7 +22,7 @@ public class StageLobby extends Stage {
 			
 			switch (menu) {
 				case MENU_BATTLE:
-				case MENU_SETTING:
+				case MENU_MARKET:
 					return;
 				case MENU_QUIT:
 					GameManager.isRunning = false;
