@@ -12,7 +12,7 @@ public class Guild {
 	private Inventory inventory = new Inventory();
 	
 	public List<Item> getItemAll() {
-		return inventory.getItemsAll;
+		return inventory.getItemAll();
 	}
 
 	public int getMoney() {
@@ -20,14 +20,14 @@ public class Guild {
 	}
 	
 	public boolean hasItem(Item item) {
-		return inventory.containsItem(item);
+		return inventory.hasItem(item);
 	}
 
 	public void addItem(Item item) {
 		inventory.addItem(item);
 	}
 	
-	public void deleteItem(Item item) {
+	public void removeItem(Item item) {
 		inventory.removeItem(item);
 	}
 	
