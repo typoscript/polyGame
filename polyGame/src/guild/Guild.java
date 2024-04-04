@@ -11,6 +11,10 @@ public class Guild {
 	private List<Hero> members = new ArrayList<Hero>();
 	public Inventory inventory = new Inventory();
 	
+	public List<Hero> getMemberAll() {
+		return members;
+	}
+	
 	public List<Item> getItemAll() {
 		return inventory.getItemAll();
 	}
