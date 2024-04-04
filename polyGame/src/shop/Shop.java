@@ -18,6 +18,8 @@ public class Shop {
 	private List<ItemUsable> itemUsables = new ArrayList<>();
 	
 	public void run() {
+		loadItemsFromFile();
+
 		while (true) {
 			printMenu();
 			int menu = Input.getInputNumber("메뉴");
@@ -37,7 +39,7 @@ public class Shop {
 	}
 	
 	private void runBuyItem() {
-		
+		printItemBuyMenu();
 	}
 
 	private void runSellItem() {
@@ -49,6 +51,13 @@ public class Shop {
 		System.out.println("1. 구매하기");
 		System.out.println("2. 판매하기");
 		System.out.println("0. 뒤로가기");
+	}
+	
+	private void printItemBuyMenu() {
+		System.out.println("=== 구매 ===");
+		for (ItemWeapon weapon : itemWeapons)
+			System.out.println(weapon.NAME);
+		System.out.println("===========");
 	}
 	
 	private void loadItemsFromFile() {
