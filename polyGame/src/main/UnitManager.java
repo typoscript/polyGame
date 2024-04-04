@@ -13,10 +13,7 @@ public class UnitManager {
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
 	
-	public UnitManager() {
-		spawnHeroes();
-		spawnMonsters(GameManager.getStageLevel());
-	}
+	private UnitManager() { }
 	
 	public List<Unit> getHeroes() {
 		return heroes;
