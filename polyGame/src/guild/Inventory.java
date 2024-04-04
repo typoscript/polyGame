@@ -44,6 +44,7 @@ public class Inventory {
 					runItemEquip();
 					break;
 				case MENU_ITEM_UNEQUIP:
+					runItemUnEquip();
 					break;
 				case MENU_GO_BACK:
 					return;
