@@ -3,12 +3,11 @@ package shop;
 import java.util.ArrayList;
 import java.util.List;
 
-import item.Item;
 import item.ItemArmor;
 import item.ItemUsable;
 import item.ItemWeapon;
 import main.FileManager;
-import main.GameManager;
+import main.Input;
 
 public class Shop {
 	private final int MENU_BUY_ITEM = 1;
@@ -21,8 +20,7 @@ public class Shop {
 	private void run() {
 		while (true) {
 			printMenu();
-			
-			int menu = GameManager.sc.nextInt();
+			int menu = Input.getInputNumber("메뉴");
 			
 			switch (menu) {
 				case MENU_BUY_ITEM:
@@ -36,6 +34,14 @@ public class Shop {
 					return;
 			}
 		}
+	}
+	
+	private void runBuyItem() {
+		
+	}
+
+	private void runSellItem() {
+		
 	}
 
 	private void printMenu() {
