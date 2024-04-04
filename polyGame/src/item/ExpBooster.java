@@ -2,7 +2,7 @@ package item;
 
 import main.Unit;
 
-public class ExpBooster extends Item implements ItemUsable {
+public class ExpBooster extends Item implements Usable {
 	public ExpBooster() {
 		super("경험치 부스터", 5000);
 	}
