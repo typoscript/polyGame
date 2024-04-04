@@ -19,10 +19,6 @@ public class Guild {
 		return money;
 	}
 	
-	public void addItem(Item item) {
-		inventory.addItem(item);
-	}
-	
 	public void removeItem(Item item) {
 		inventory.removeItem(item);
 	}
