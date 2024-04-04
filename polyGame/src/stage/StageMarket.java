@@ -8,8 +8,8 @@ public class StageMarket extends Stage {
 	private final int GUILD_EDIT	= 1;
 	private final int SHOP			= 2;
 	private final int INVENTORY		= 3;
-	private final int SAVE_DATA		= 4;
-	private final int LOAD_DATA		= 5;
+	private final int DATA_SAVE		= 4;
+	private final int DATA_LOAD		= 5;
 	private final int GO_BACK		= 0;
 
 	private Shop shop;
@@ -46,9 +46,9 @@ public class StageMarket extends Stage {
 					break;
 				case INVENTORY:
 					break;
-				case SAVE_DATA:
+				case DATA_SAVE:
 					break;
-				case LOAD_DATA:
+				case DATA_LOAD:
 					break;
 				case GO_BACK:
 					return StageName.LOBBY;
