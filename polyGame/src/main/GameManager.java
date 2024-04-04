@@ -7,6 +7,7 @@ import java.util.Scanner;
 import stage.Stage;
 import stage.StageBattle;
 import stage.StageLobby;
+import stage.StageMarket;
 import stage.StageName;
 
 public class GameManager {
