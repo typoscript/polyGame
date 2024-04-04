@@ -3,7 +3,7 @@ package hero;
 import main.Input;
 import main.Unit;
 
-public class Healer extends Unit implements Actionable {
+public class Healer extends Hero implements Actionable {
 	private int healPower;
 
 	public Healer() {
