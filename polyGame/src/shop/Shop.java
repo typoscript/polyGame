@@ -33,7 +33,7 @@ public class Shop {
 			
 			switch (menu) {
 				case MENU_BUY_ITEM:
-					runBuyItem();
+					runMenuItemBuy();
 					break;
 				case MENU_SELL_ITEM:
 					runSellItem();
@@ -45,7 +45,7 @@ public class Shop {
 		}
 	}
 	
-	private void runBuyItem() {
+	private void runMenuItemBuy() {
 		while (true) {
 			printMenuItemBuy();
 			int menu = Input.getInputNumber("메뉴");
@@ -55,10 +55,10 @@ public class Shop {
 					runBuyItem(ItemType.WEAPON);
 					break;
 				case MENU_BUY_ARMOR:
-					unBuyItem(ARMOR);
+					runBuyItem(ItemType.WEAPON);
 					break;
 				case MENU_BUY_POTION:
-					runBuyItem(POTION);
+					runBuyItem(ItemType.WEAPON);
 					break;
 				case MENU_GO_BACK:
 					return;
