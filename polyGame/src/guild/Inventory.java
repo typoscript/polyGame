@@ -101,6 +101,7 @@ public class Inventory {
 			member.equipItem((Armor)item);
 		}
 		
+		items.remove(item);
 		System.out.println("착용 성공");
 	}
 	
