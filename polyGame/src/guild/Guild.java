@@ -19,10 +19,6 @@ public class Guild {
 		return money;
 	}
 	
-	public void removeItem(Item item) {
-		inventory.removeItem(item);
-	}
-	
 	public void addMoney(int money) {
 		if (money > 0)
 			this.money += money;
