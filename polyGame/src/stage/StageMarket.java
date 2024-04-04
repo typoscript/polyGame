@@ -34,6 +34,7 @@ public class StageMarket extends Stage {
 
 	@Override
 	public StageName run() {
+		init();
 		printMenu();
 		
 		while (true) {
@@ -43,6 +44,7 @@ public class StageMarket extends Stage {
 				case GUILD_EDIT:
 					break;
 				case SHOP:
+					shop.run();
 					break;
 				case INVENTORY:
 					break;
@@ -55,6 +57,6 @@ public class StageMarket extends Stage {
 			}
 		}
 		
-		return StageName.LOBBY;
+		//return StageName.LOBBY;
 	}
 }
