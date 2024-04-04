@@ -93,8 +93,8 @@ public class Shop {
 			System.out.printf("%d. %s\n", i + 1, items.get(i));
 		System.out.println("============");
 		
-		int itemIndex = Input.getInputNumber("아이템 숫자");
-		
+		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
+
 		if (itemIndex < 0 || itemIndex >= items.size()) {
 			System.out.println("잘못된 아이템입니다");
 			return;
@@ -102,14 +102,46 @@ public class Shop {
 		
 		Item item = items.get(itemIndex);
 		
-		if (item.PRICE > Player.getGuildMoney())
+		if (item.PRICE > Player.guild.getMoney())
 			System.out.println("돈 부족으로 구매 불가");
 		
-		Player.addItemToGuild();
+		Player.guild.addItem();
 	}
 
 	private void runSellItem() {
+		Player.guild.printItemAll();
 		
+		List<Item> items = Player.guild.getItemAll();
+		
+		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
+
+		if (itemIndex < 0 || itemIndex >= items.size()) {
+			System.out.println("잘못된 아이템입니다");
+			return;
+		}
+		
+		Item item = items.get(itemIndex);
+		int tax = Calculator.getSellingTax(item.PRICE);
+		int sellingPrice = Calculator.getSellingPrice(item.PRICE);
+		
+		System.out.printf("%s의 구매가: %d\n양도소득세: %d\n판매가: %d\n",
+				item.NAME, item.PRICE, tax, sellingPrice);
+		
+		while (true) {
+			int menu = Input.getInputNumber("판매? 1) 예 2) 아니요");
+			final int MENU_SELL_YES = 1;
+			final int MENU_SELL_NO = 2;
+			
+			switch (menu) {
+				case MENU_SELL_YES:
+					Player.guild.deleteItem(item);
+					Player.guild.addMoney(sellingPrice);
+					System.out.println("판매 완료");
+					return;
+				case MENU_SELL_NO:
+					return;
+			}
+		}
 	}
 
 	private void printMenu() {
