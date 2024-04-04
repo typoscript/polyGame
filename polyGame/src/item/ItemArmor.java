@@ -7,4 +7,9 @@ public class ItemArmor extends Item implements Armor {
 		super(name, price);
 		this.ARMOR = armor;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("방어구: %s | 가격: %d | 방어력: %d", NAME, PRICE, ARMOR);
+	}
 }
