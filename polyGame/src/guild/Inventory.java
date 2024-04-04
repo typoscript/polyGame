@@ -28,8 +28,21 @@ public class Inventory {
 		items.remove(item);
 	}
 	
-	public void runInventory() {
-		printMenu();
+	public void run() {
+		while (true) {
+			printMenu();
+			
+			int menu = Input.getInputNumber("메뉴");
+			
+			switch (menu) {
+				case MENU_ITEM_EQUIP:
+					break;
+				case MENU_ITEM_UNEQUIP:
+					break;
+				case MENU_GO_BACK:
+					return;
+			}
+		}
 	}
 	
 	private void printMenu() {
