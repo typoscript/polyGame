@@ -1,5 +1,7 @@
 package hero;
 
+import java.util.List;
+
 import item.Armor;
 import item.ItemUsable;
 import item.Weapon;
@@ -13,7 +15,7 @@ public abstract class Hero extends Unit {
 	protected boolean hasParty;
 	protected Weapon weapon;
 	protected Armor armor;
-	protected ItemUsable[] usableItems;
+	protected List<ItemUsable> usableItems;
 	
 	abstract public void attack(Unit target);
 }
