@@ -4,8 +4,8 @@ import main.GameManager;
 
 public class StageLobby extends Stage {
 	private final int MENU_BATTLE = 1;
-	private final int MENU_QUIT = 2;
-	private final int MENU_MARKET = 3;
+	private final int MENU_MARKET = 2;
+	private final int MENU_QUIT = 3;
 
 	@Override
 	public void init() { }
