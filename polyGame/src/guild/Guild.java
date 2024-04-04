@@ -9,10 +9,10 @@ import item.Item;
 public class Guild {
 	private int money = 1000;
 	private List<Hero> members = new ArrayList<Hero>();
-	private List<Item> items = new ArrayList<Item>();
+	private Inventory inventory = new Inventory();
 	
 	public List<Item> getItemAll() {
-		return items;
+		return inventory.getItemsAll;
 	}
 
 	public int getMoney() {
@@ -20,15 +20,15 @@ public class Guild {
 	}
 	
 	public boolean hasItem(Item item) {
-		return items.contains(item);
+		return inventory.containsItem(item);
 	}
 
 	public void addItem(Item item) {
-		items.add(item);
+		inventory.addItem(item);
 	}
 	
 	public void deleteItem(Item item) {
-		items.remove(item);
+		inventory.removeItem(item);
 	}
 	
 	public void addMoney(int money) {
