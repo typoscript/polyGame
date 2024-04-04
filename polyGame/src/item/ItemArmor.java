@@ -9,6 +9,11 @@ public class ItemArmor extends Item implements Armor {
 	}
 
 	@Override
+	public ItemArmor clone() {
+		return new ItemArmor(NAME, PRICE, ARMOR);
+	}
+
+	@Override
 	public String toString() {
 		return String.format("방어구: %s | 가격: %d | 방어력: %d", NAME, PRICE, ARMOR);
 	}
