@@ -9,6 +9,10 @@ public class Guild {
 	private int money = 1000;
 	private List<Item> items = new ArrayList<Item>();
 	
+	public List<Item> getItemAll() {
+		return items;
+	}
+	
 	public int getMoney() {
 		return money;
 	}
