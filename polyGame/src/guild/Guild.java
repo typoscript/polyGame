@@ -9,7 +9,7 @@ import item.Item;
 public class Guild {
 	private int money = 1000;
 	private List<Hero> members = new ArrayList<Hero>();
-	private static Inventory inventory = new Inventory();
+	public Inventory inventory = new Inventory();
 	
 	public List<Item> getItemAll() {
 		return inventory.getItemAll();
