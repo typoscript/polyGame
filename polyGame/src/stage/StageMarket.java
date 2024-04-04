@@ -4,8 +4,15 @@ import main.UnitManager;
 import shop.Shop;
 
 public class StageMarket extends Stage {
-	Shop shop;
-	UnitManager unitManager;
+	private final int GUILD_EDIT	= 1;
+	private final int SHOP			= 2;
+	private final int INVENTORY		= 3;
+	private final int SAVE_DATA		= 4;
+	private final int LOAD_DATA		= 5;
+	private final int GO_BACK		= 0;
+
+	private Shop shop;
+	private UnitManager unitManager;
 	
 	private void printMenu() {
 		System.out.println("=== 시장 ===");
