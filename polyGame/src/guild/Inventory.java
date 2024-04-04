@@ -72,7 +72,7 @@ public class Inventory {
 			System.out.printf("%d. %s\n", i + 1, members.get(i).getStatusOfWearables());
 		System.out.println("============");
 		
-		int memberIndex = Input.getInputNumber("아이템 숫자") - 1;
+		int memberIndex = Input.getInputNumber("길드원의 숫자") - 1;
 		
 		if (memberIndex < 0 || memberIndex >= members.size()) {
 			System.out.println("잘못된 숫자입니다");
@@ -83,12 +83,38 @@ public class Inventory {
 		Hero member = members.get(memberIndex);
 		
 		if (item instanceof Weapon) {
+			if (member.hasWeapon()) {
+				System.out.println("이미 무기를 착용하고있습니다");	
+				return;
+			}
+
 			member.equipItem((Weapon)item);
 		} else if (item instanceof Armor) {
+			if (member.hasArmor()) {
+				System.out.println("이미 방어구를 착용하고있습니다");	
+				return;
+			}
+
 			member.equipItem((Armor)item);
 		}
 		
 		System.out.println("착용 성공");
+	}
+	
+	private void runItemUnEquip() {
+		List<Hero> members = Player.guild.getMemberAll();
+		Print.printListWithListNumber(members);
+
+		int memberIndex = Input.getInputNumber("길드원의 숫자") - 1;
+		
+		if (memberIndex < 0 || memberIndex >= members.size()) {
+			System.out.println("잘못된 숫자입니다");
+			return;
+		}
+		
+		Hero member = members.get(memberIndex);
+		
+		if (member.hasWeapon())
 	}
 	
 	private void printMenu() {
