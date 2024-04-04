@@ -2,9 +2,6 @@ package main;
 
 import hero.Hero;
 
-public class Player extends Hero {
+public class Player {
 	private Player() { }
-
-	@Override
-	public void attack(Unit target) { }
 }
