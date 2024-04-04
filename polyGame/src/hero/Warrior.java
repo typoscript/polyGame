@@ -3,7 +3,7 @@ package hero;
 import main.Input;
 import main.Unit;
 
-public class Warrior extends Unit implements Actionable {
+public class Warrior extends Hero implements Actionable {
 	public Warrior() {
 		name = "전사";
 		maxHp = 200;
