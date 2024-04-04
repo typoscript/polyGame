@@ -18,6 +18,7 @@ public class GameManager {
 	
 	public GameManager() {
 		stages.put(StageName.LOBBY, new StageLobby());
+		stages.put(StageName.MARKET, new StageMarket());
 		stages.put(StageName.BATTLE, new StageBattle());
 		
 		currentStage = StageName.LOBBY;
@@ -30,18 +31,11 @@ public class GameManager {
 	public void run() {
 		while (isRunning) {
 			Stage stage = stages.get(currentStage);
+
+			currentStage = stage.run();
 			
-			stage.run();
-			
-			switch (currentStage) {
-				case LOBBY:
-					currentStage = StageName.BATTLE;
-					break;
-				case BATTLE:
-					currentStage = StageName.LOBBY;
+			if (currentStage == StageName.BATTLE)
 					stageLevel++;
-					break;
-			}
 		}
 		
 		System.out.println("게임 종료");
