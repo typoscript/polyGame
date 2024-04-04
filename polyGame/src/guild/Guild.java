@@ -11,4 +11,12 @@ public class Guild {
 		if (money > 0)
 			this.money += money;
 	}
+	
+	public boolean spendMoney(int money) {
+		if (money > this.money)
+			return false;
+		
+		this.money -= money;
+		return true;
+	}
 }
