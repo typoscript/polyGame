@@ -1,5 +1,7 @@
 package item;
 
-public interface Usable {
+import main.Unit;
 
+public interface Usable {
+	public void use(Unit target);
 }
