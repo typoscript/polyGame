@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import item.ItemArmor;
+import item.ItemType;
 import item.ItemUsable;
 import item.ItemWeapon;
 import main.FileManager;
@@ -51,10 +52,10 @@ public class Shop {
 			
 			switch (menu) {
 				case MENU_BUY_WEAPON:
-					runBuyItem(WEAPON);
+					runBuyItem(ItemType.WEAPON);
 					break;
 				case MENU_BUY_ARMOR:
-					runBuyItem(ARMOR);
+					unBuyItem(ARMOR);
 					break;
 				case MENU_BUY_POTION:
 					runBuyItem(POTION);
@@ -62,6 +63,12 @@ public class Shop {
 				case MENU_GO_BACK:
 					return;
 			}
+		}
+	}
+	
+	private void runBuyItem(String type) {
+		for (ItemWeapon weapon : itemWeapons) {
+			System.out.println(weapon);
 		}
 	}
 
@@ -89,10 +96,6 @@ public class Shop {
 		String fileData = FileManager.loadFile("src/item/items.txt"); // ok
 		String[] items = fileData.split("\n");
 		
-		String WEAPON = "WEAPON";
-		String ARMOR = "ARMOR";
-		String HP_POTION = "HP_POTION";
-		
 		for (String item : items) {
 			String[] data = item.split("/");
 			
@@ -101,12 +104,17 @@ public class Shop {
 			int price = Integer.parseInt(data[2]);
 			int stat = Integer.parseInt(data[3]);
 			
-			if (type.equals(WEAPON))
-				itemWeapons.add(new ItemWeapon(name, price, stat));
-			else if (type.equals(ARMOR))
-				itemArmors.add(new ItemArmor(name, price, stat));
-			else if (type.equals(HP_POTION))
-				itemUsables.add(new ItemUsable(name, price, stat));
+			switch (type) {
+				case (ItemType.WEAPON):
+					itemWeapons.add(new ItemWeapon(name, price, stat));
+					break;
+				case (ItemType.ARMOR):
+					itemArmors.add(new ItemArmor(name, price, stat));
+					break;
+				case (ItemType.POTION):
+					itemUsables.add(new ItemUsable(name, price, stat));
+					break;
+			}
 		}
 	}
 }
