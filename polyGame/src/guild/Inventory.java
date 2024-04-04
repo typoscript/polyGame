@@ -16,7 +16,7 @@ public class Inventory {
 		return items.contains(item);
 	}
 
-	public void add(Item item) {
+	public void addItem(Item item) {
 		items.add(item);
 	}
 	
