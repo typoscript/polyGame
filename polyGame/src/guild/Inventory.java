@@ -8,6 +8,14 @@ import item.Item;
 public class Inventory {
 	List<Item> items = new ArrayList<Item>();
 	
+	public List<Item> getItemAll() {
+		return items;
+	}
+	
+	public void runInventory() {
+		printMenu();
+	}
+	
 	private void printMenu() {
 		System.out.println("=== 인벤토리 ===");
 		System.out.println("1) 착용");
