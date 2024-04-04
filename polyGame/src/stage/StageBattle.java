@@ -11,7 +11,7 @@ import main.UnitManager;
 import main.UnitStatus;
 
 public class StageBattle extends Stage {
-	private UnitManager unitManager = new UnitManager();
+	private UnitManager unitManager = UnitManager.getInstance();
 	private List<Unit> heroes = new ArrayList<Unit>();
 	private List<Unit> monsters = new ArrayList<Unit>();
 	
