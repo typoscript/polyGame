@@ -6,4 +6,9 @@ public class Guild {
 	public int getMoney() {
 		return money;
 	}
+	
+	public void addMoney(int money) {
+		if (money > 0)
+			this.money += money;
+	}
 }
