@@ -90,10 +90,7 @@ public class Shop {
 			return;
 		}
 		
-		System.out.println("=== 리스트 ===");
-		for (int i = 0; i < items.size(); i++)
-			System.out.printf("%d. %s\n", i + 1, items.get(i));
-		System.out.println("============");
+		Print.printListWithListNumber(items);
 		
 		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
 
