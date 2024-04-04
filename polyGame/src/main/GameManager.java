@@ -36,7 +36,7 @@ public class GameManager {
 			currentStage = stage.run();
 			
 			if (currentStage == StageName.BATTLE)
-					stageLevel++;
+				stageLevel++;
 		}
 		
 		System.out.println("게임 종료");
