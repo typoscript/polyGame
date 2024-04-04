@@ -6,6 +6,8 @@ import java.util.List;
 import hero.Hero;
 import item.Armor;
 import item.Item;
+import item.ItemArmor;
+import item.ItemWeapon;
 import item.Weapon;
 import main.Input;
 import main.Player;
@@ -132,7 +134,8 @@ public class Inventory {
 						return;
 					}
 					
-					member.unEquipWeapon();
+					ItemWeapon item = member.unEquipWeapon();
+					items.add(item);
 					break;
 				case MENU_ARMOR:
 					if (!member.hasArmor())
@@ -140,7 +143,8 @@ public class Inventory {
 						return;
 					}
 
-					member.unEquipArmor();
+					ItemArmor item = member.unEquipArmor();
+					items.add(item);
 					break;
 		}
 	}
