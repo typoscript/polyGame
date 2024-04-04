@@ -1,6 +1,6 @@
 package stage;
 
-import main.GameManager;
+import main.Input;
 import main.UnitManager;
 import shop.Shop;
 
@@ -37,7 +37,7 @@ public class StageMarket extends Stage {
 		printMenu();
 		
 		while (true) {
-			int menu = GameManager.sc.nextInt();
+			int menu = Input.getInputNumber("메뉴");
 			
 			switch (menu) {
 				case GUILD_EDIT:
