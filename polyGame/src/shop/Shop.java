@@ -53,10 +53,12 @@ public class Shop {
 		System.out.println("0. 뒤로가기");
 	}
 	
-	private void printItemBuyMenu() {
+	private void printMenuItemBuy() {
 		System.out.println("=== 구매 ===");
-		for (ItemWeapon weapon : itemWeapons)
-			System.out.println(weapon.NAME);
+		System.out.println("1. 무기");
+		System.out.println("2. 방어구");
+		System.out.println("3. 물약");
+		System.out.println("0. 뒤로가기");
 		System.out.println("===========");
 	}
 	
