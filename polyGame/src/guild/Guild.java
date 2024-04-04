@@ -13,6 +13,10 @@ public class Guild {
 		return items;
 	}
 	
+	public void deleteItem(Item item) {
+		items.remove(item);
+	}
+	
 	public int getMoney() {
 		return money;
 	}
