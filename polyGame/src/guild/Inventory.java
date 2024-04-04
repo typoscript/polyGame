@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import item.Item;
+import main.Input;
 
 public class Inventory {
+	private final int MENU_ITEM_EQUIP = 1;
+	private final int MENU_ITEM_UNEQUIP = 2;
+	private final int MENU_GO_BACK = 0;
 	List<Item> items = new ArrayList<Item>();
 	
 	public List<Item> getItemAll() {
@@ -18,6 +22,10 @@ public class Inventory {
 
 	public void addItem(Item item) {
 		items.add(item);
+	}
+	
+	public void removeItem(Item item) {
+		items.remove(item);
 	}
 	
 	public void runInventory() {
