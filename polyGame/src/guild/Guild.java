@@ -1,7 +1,13 @@
 package guild;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import item.Item;
+
 public class Guild {
 	private int money = 1000;
+	private List<Item> items = new ArrayList<Item>();
 	
 	public int getMoney() {
 		return money;
