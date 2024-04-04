@@ -1,7 +1,10 @@
 package item;
 
-import main.Unit;
+public class ItemUsable extends Item implements Usable {
+	final int STAT;
 
-public interface ItemUsable {
-	public void use(Unit target);
+	public ItemUsable(String name, int price, int stat) {
+		super(name, price);
+		this.STAT = stat;
+	}
 }
