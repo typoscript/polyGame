@@ -7,4 +7,9 @@ public class ItemWeapon extends Item implements Weapon {
 		super(name, price);
 		this.ATTACK_POWER = attackPower;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("무기: %s | 가격: %d | 공격력: %d", NAME, PRICE, ATTACK_POWER);
+	}
 }
