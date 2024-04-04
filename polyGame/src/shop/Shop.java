@@ -14,9 +14,9 @@ public class Shop {
 	private final int MENU_BUY = 1;
 	private final int MENU_SELL = 2;
 	private final int MENU_QUIT = 0;
-	private static List<ItemWeapon> itemWeapons = new ArrayList<>();
-	private static List<ItemArmor> itemArmors = new ArrayList<>();
-	private static List<ItemUsable> itemUsables = new ArrayList<>();
+	private List<ItemWeapon> itemWeapons = new ArrayList<>();
+	private List<ItemArmor> itemArmors = new ArrayList<>();
+	private List<ItemUsable> itemUsables = new ArrayList<>();
 	
 	private void run() {
 		while (true) {
@@ -43,5 +43,30 @@ public class Shop {
 		System.out.println("1. 구매하기");
 		System.out.println("2. 판매하기");
 		System.out.println("0. 뒤로가기");
+	}
+	
+	private void loadItemsFromFile() {
+		String fileData = FileManager.loadFile("src/item/items.txt"); // ok
+		String[] items = fileData.split("\n");
+		
+		String WEAPON = "WEAPON";
+		String ARMOR = "ARMOR";
+		String HP_POTION = "HP_POTION";
+		
+		for (String item : items) {
+			String[] data = item.split("/");
+			
+			String type = data[0];
+			String name = data[1];
+			int price = Integer.parseInt(data[2]);
+			int stat = Integer.parseInt(data[3]);
+			
+			if (type.equals(WEAPON))
+				itemWeapons.add(new ItemWeapon(name, price, stat));
+			else if (type.equals(ARMOR))
+				itemArmors.add(new ItemArmor(name, price, stat));
+			else if (type.equals(HP_POTION))
+				itemUsables.add(new ItemUsable(name, price, stat));
+		}
 	}
 }
