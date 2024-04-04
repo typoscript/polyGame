@@ -1,6 +1,7 @@
 package stage;
 
 import main.GameManager;
+import main.Input;
 
 public class StageLobby extends Stage {
 	private final int MENU_BATTLE = 1;
@@ -17,8 +18,7 @@ public class StageLobby extends Stage {
 		System.out.println("==========================");
 		
 		while (true) {
-			System.out.print("메뉴: ");
-			int menu = GameManager.sc.nextInt();
+			int menu = Input.getInputNumber("메뉴");
 			
 			switch (menu) {
 				case MENU_BATTLE:
