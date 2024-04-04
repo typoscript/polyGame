@@ -1,7 +1,7 @@
 package main;
 
-import hero.Hero;
-
 public class Player {
+	public static Guild guild = new Guild();
+
 	private Player() { }
 }
