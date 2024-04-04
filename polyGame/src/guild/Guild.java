@@ -19,10 +19,6 @@ public class Guild {
 		return money;
 	}
 	
-	public boolean hasItem(Item item) {
-		return inventory.hasItem(item);
-	}
-
 	public void addItem(Item item) {
 		inventory.addItem(item);
 	}
