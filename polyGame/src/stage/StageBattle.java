@@ -111,7 +111,7 @@ public class StageBattle extends Stage {
 	}
 
 	@Override
-	public void run() {
+	public StageName run() {
 		init();
 		
 		while (isRunning()) {
@@ -123,5 +123,7 @@ public class StageBattle extends Stage {
 		
 		if (heroes.size() == 0)
 			GameManager.isRunning = false;
+		
+		return StageName.NO_STAGE;
 	}
 }
