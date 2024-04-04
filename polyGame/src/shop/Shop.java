@@ -13,6 +13,12 @@ public class Shop {
 	private final int MENU_BUY_ITEM = 1;
 	private final int MENU_SELL_ITEM = 2;
 	private final int MENU_QUIT = 0;
+	private final int MENU_GO_BACK = 0;
+	
+	private final int MENU_BUY_WEAPON = 1;
+	private final int MENU_BUY_ARMOR = 2;
+	private final int MENU_BUY_POTION = 3;
+	
 	private List<ItemWeapon> itemWeapons = new ArrayList<>();
 	private List<ItemArmor> itemArmors = new ArrayList<>();
 	private List<ItemUsable> itemUsables = new ArrayList<>();
@@ -39,7 +45,24 @@ public class Shop {
 	}
 	
 	private void runBuyItem() {
-		printItemBuyMenu();
+		while (true) {
+			printMenuItemBuy();
+			int menu = Input.getInputNumber("메뉴");
+			
+			switch (menu) {
+				case MENU_BUY_WEAPON:
+					runBuyItem(WEAPON);
+					break;
+				case MENU_BUY_ARMOR:
+					runBuyItem(ARMOR);
+					break;
+				case MENU_BUY_POTION:
+					runBuyItem(POTION);
+					break;
+				case MENU_GO_BACK:
+					return;
+			}
+		}
 	}
 
 	private void runSellItem() {
