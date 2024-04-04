@@ -1,6 +1,5 @@
 package hero;
 
-import main.GameManager;
 import main.Input;
 import main.Unit;
 
