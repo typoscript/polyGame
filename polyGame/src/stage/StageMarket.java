@@ -1,5 +1,6 @@
 package stage;
 
+import main.GameManager;
 import main.UnitManager;
 import shop.Shop;
 
@@ -33,6 +34,27 @@ public class StageMarket extends Stage {
 
 	@Override
 	public StageName run() {
+		printMenu();
+		
+		while (true) {
+			int menu = GameManager.sc.nextInt();
+			
+			switch (menu) {
+				case GUILD_EDIT:
+					break;
+				case SHOP:
+					break;
+				case INVENTORY:
+					break;
+				case SAVE_DATA:
+					break;
+				case LOAD_DATA:
+					break;
+				case GO_BACK:
+					return StageName.LOBBY;
+			}
+		}
+		
 		return StageName.LOBBY;
 	}
 }
