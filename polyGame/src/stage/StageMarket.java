@@ -1,15 +1,20 @@
 package stage;
 
+import main.UnitManager;
+import shop.Shop;
+
 public class StageMarket extends Stage {
+	Shop shop;
+	UnitManager unitManager;
+
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
-		
+		shop = new Shop();
+		unitManager = UnitManager.getInstance();
 	}
 
 	@Override
 	public StageName run() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
