@@ -11,7 +11,7 @@ public class StageLobby extends Stage {
 	public void init() { }
 
 	@Override
-	public void run() {
+	public StageName run() {
 		System.out.printf("=== 로비 (현재 스테이지 %d) ====\n", GameManager.getStageLevel());
 		System.out.println("1) 전투 2) 정비 3) 종료");
 		System.out.println("==========================");
@@ -22,11 +22,12 @@ public class StageLobby extends Stage {
 			
 			switch (menu) {
 				case MENU_BATTLE:
+					return StageName.BATTLE;
 				case MENU_MARKET:
-					return;
+					return StageName.MARKET;
 				case MENU_QUIT:
 					GameManager.isRunning = false;
-					return;
+					return StageName.NO_STAGE;
 			}
 		}
 	}
