@@ -103,7 +103,11 @@ public class Inventory {
 	
 	private void runItemUnEquip() {
 		List<Hero> members = Player.guild.getMemberAll();
-		Print.printListWithListNumber(members);
+
+		System.out.println("=== 리스트 ===");
+		for (int i = 0; i < members.size(); i++)
+			System.out.printf("%d. %s\n", i + 1, members.get(i).getStatusOfWearables());
+		System.out.println("============");
 
 		int memberIndex = Input.getInputNumber("길드원의 숫자") - 1;
 		
@@ -114,7 +118,32 @@ public class Inventory {
 		
 		Hero member = members.get(memberIndex);
 		
-		if (member.hasWeapon())
+		final int MENU_YES = 1;
+		final int MENU_NO = 2;
+		final int MENU_WEAPON = 1;
+		final int MENU_ARMOR = 2;
+
+		while (true) {
+			int menu = Input.getInputNumber("벗기 1) 무기 2) 방어구");
+
+			switch (menu) {
+				case MENU_WEAPON:
+					if (!member.hasWeapon()) {
+						System.out.println("무기가 없습니다");
+						return;
+					}
+					
+					member.unEquipWeapon();
+					break;
+				case MENU_ARMOR:
+					if (!member.hasArmor())
+						System.out.println("방어구가 없습니다");
+						return;
+					}
+
+					member.unEquipArmor();
+					break;
+		}
 	}
 	
 	private void printMenu() {
