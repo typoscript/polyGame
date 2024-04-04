@@ -104,7 +104,7 @@ public class Shop {
 		if (item.PRICE > Player.guild.getMoney())
 			System.out.println("돈 부족으로 구매 불가");
 		
-		Player.guild.addItem(item);
+		Player.guild.inventory.addItem(item);
 	}
 
 	private void runSellItem() {
@@ -133,7 +133,7 @@ public class Shop {
 			
 			switch (menu) {
 				case MENU_SELL_YES:
-					Player.guild.deleteItem(item);
+					Player.guild.inventory.removeItem(item);
 					Player.guild.addMoney(sellingPrice);
 					System.out.println("판매 완료");
 					return;
