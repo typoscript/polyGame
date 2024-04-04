@@ -15,6 +15,10 @@ public class Inventory {
 	public boolean hasItem(Item item) {
 		return items.contains(item);
 	}
+
+	public void add(Item item) {
+		items.add(item);
+	}
 	
 	public void runInventory() {
 		printMenu();
