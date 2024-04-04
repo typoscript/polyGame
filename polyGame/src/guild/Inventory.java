@@ -119,8 +119,6 @@ public class Inventory {
 		
 		Hero member = members.get(memberIndex);
 		
-		final int MENU_YES = 1;
-		final int MENU_NO = 2;
 		final int MENU_WEAPON = 1;
 		final int MENU_ARMOR = 2;
 
