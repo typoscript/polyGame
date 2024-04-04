@@ -3,10 +3,12 @@ package guild;
 import java.util.ArrayList;
 import java.util.List;
 
+import hero.Hero;
 import item.Item;
 
 public class Guild {
 	private int money = 1000;
+	private List<Hero> members = new ArrayList<Hero>();
 	private List<Item> items = new ArrayList<Item>();
 	
 	public List<Item> getItemAll() {
