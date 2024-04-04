@@ -13,16 +13,20 @@ public class Guild {
 		return items;
 	}
 
+	public int getMoney() {
+		return money;
+	}
+	
+	public boolean hasItem(Item item) {
+		return items.contains(item);
+	}
+
 	public void addItem(Item item) {
 		items.add(item);
 	}
 	
 	public void deleteItem(Item item) {
 		items.remove(item);
-	}
-	
-	public int getMoney() {
-		return money;
 	}
 	
 	public void addMoney(int money) {
