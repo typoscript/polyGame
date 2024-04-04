@@ -9,4 +9,13 @@ public class Input {
 		System.out.print(message + ": ");
 		return sc.next();
 	}
+	
+	public static int getInputNumber(String message) {
+		while (true) {
+			try {
+				String input = getInputString(message);
+				return Integer.parseInt(input);
+			} catch (Exception e) { }
+		}
+	}
 }
