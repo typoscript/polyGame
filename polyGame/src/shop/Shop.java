@@ -11,8 +11,8 @@ import main.FileManager;
 import main.GameManager;
 
 public class Shop {
-	private final int MENU_BUY = 1;
-	private final int MENU_SELL = 2;
+	private final int MENU_BUY_ITEM = 1;
+	private final int MENU_SELL_ITEM = 2;
 	private final int MENU_QUIT = 0;
 	private List<ItemWeapon> itemWeapons = new ArrayList<>();
 	private List<ItemArmor> itemArmors = new ArrayList<>();
@@ -25,11 +25,11 @@ public class Shop {
 			int menu = GameManager.sc.nextInt();
 			
 			switch (menu) {
-				case MENU_BUY:
-					runBuy();
+				case MENU_BUY_ITEM:
+					runBuyItem();
 					break;
-				case MENU_SELL:
-					runSell();
+				case MENU_SELL_ITEM:
+					runSellItem();
 					break;
 				case MENU_QUIT:
 					System.out.println("상점 종료");
