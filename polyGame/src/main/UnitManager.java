@@ -22,10 +22,6 @@ public class UnitManager {
 		spawnMonsters(GameManager.getStageLevel());
 	}
 	
-	public List<Unit> getHeroes() {
-		return heroes;
-	}
-
 	public List<Unit> getMonsters() {
 		return monsters;
 	}
