@@ -66,7 +66,7 @@ public class Shop {
 					runBuyItem(ItemType.ARMOR);
 					break;
 				case MENU_BUY_POTION:
-					runBuyItem(ItemType.POTION);
+					runBuyItem(ItemType.HP_POTION);
 					break;
 				case MENU_GO_BACK:
 					return;
@@ -84,7 +84,7 @@ public class Shop {
 			case ItemType.ARMOR:
 				items = (List)itemArmors;
 				break;
-			case ItemType.POTION:
+			case ItemType.HP_POTION:
 				items = (List)itemUsables;
 				break;
 			default:
