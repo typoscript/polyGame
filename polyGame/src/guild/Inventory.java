@@ -26,12 +26,12 @@ public class Inventory {
 		return items;
 	}
 	
-	public void useItem(Unit target) {
+	public boolean useItem(Unit target) {
 		List<Item> itemUsables = ItemFilter.filter(ItemFilter.USEABLE, items);
 
 		if (itemUsables.isEmpty()) {
 			System.out.println("아이템이 없습니다");
-			return;
+			return false;
 		}
 		
 		Print.printListWithListNumber(itemUsables);
@@ -39,13 +39,15 @@ public class Inventory {
 		
 		if (itemIndex < 0 || itemIndex >= itemUsables.size()) {
 			System.out.println("잘못된 숫자입니다");
-			return;
+			return false;
 		}
 		
 		ItemUse item = (ItemUse)itemUsables.get(itemIndex);
 		item.use(target);
 		items.remove(item);
 		System.out.println("아이템 사용 성공");
+		
+		return true;
 	}
 
 	public boolean hasItem(Item item) {
