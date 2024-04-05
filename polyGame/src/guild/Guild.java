@@ -43,7 +43,31 @@ public class Guild {
 		return true;
 	}
 	
-	public Hero getRandomHero() {
+	public void run() {
+		while (true) {
+			printMenu();
+			int menu = Input.getInputNumber("메뉴");
+			
+			switch (menu) {
+				case MEMBER_VIEW_ALL:
+					printMemberAll();
+					break;
+				case MEMBER_HIRE:
+					hireMember();
+					break;
+				case MEMBER_FIRE:
+					fireMember();
+					break;
+				case PARTY_MEMBER_CHANGE:
+					changePartyMember();
+					break;
+				case MENU_GO_BACK:
+					return;
+			}
+		}
+	}
+	
+	private Hero getRandomHero() {
 		Hero[] heroes = {
 				new Healer(),
 				new Mage(),
@@ -57,7 +81,7 @@ public class Guild {
 		return heroes[randomIndex];
 	}
 	
-	public List<Hero> getRandomHeroes(int numOfHeroes) {
+	private List<Hero> getRandomHeroes(int numOfHeroes) {
 		List<Hero> heroes = new ArrayList<Hero>();
 		
 		for (int i = 0; i < numOfHeroes; i++)
@@ -139,7 +163,7 @@ public class Guild {
 		System.out.println("파티 가입 성공");
 	}
 	
-	public void printMenu() {
+	private void printMenu() {
 		System.out.println("=== 길드 관리 ===");
 		System.out.println("1) 길드원 목록 2) 증원 3) 감원 4) 파티원 교체 0) 뒤로가기");
 		System.out.println("==============");
