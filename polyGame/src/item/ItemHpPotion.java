@@ -2,9 +2,8 @@ package item;
 
 import main.Unit;
 
-public class HpPotion extends ItemUsable {
-
-	public HpPotion(String name, int price, int stat) {
+public class ItemHpPotion extends ItemUsable {
+	public ItemHpPotion(String name, int price, int stat) {
 		super(name, price, stat);
 	}
 
