@@ -67,6 +67,9 @@ public class Guild {
 				case MENU_MEMBER_FIRE:
 					fireMember();
 					break;
+				case MENU_PARTY_MEMBER_VIEW_ALL:
+					printPartyMemberAll();
+					break;
 				case MENU_PARTY_MEMBER_CHANGE:
 					changePartyMember();
 					break;
