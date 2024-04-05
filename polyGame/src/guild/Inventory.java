@@ -101,6 +101,11 @@ public class Inventory {
 		}
 		
 		List<Hero> members = Player.guild.getMemberAll();
+		
+		if (members.isEmpty()) {
+			System.out.println("길드원이 없습니다");
+			return;
+		}
 
 		System.out.println("=== 리스트 ===");
 		for (int i = 0; i < members.size(); i++)
