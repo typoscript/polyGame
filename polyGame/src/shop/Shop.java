@@ -110,6 +110,11 @@ public class Shop {
 	private void runSellItem() {
 		List<Item> items = Player.guild.getItemAll();
 		
+		if (items.isEmpty()) {
+			System.out.println("길드 인벤토리에 아이템이 없습니다");
+			return;
+		}
+		
 		Print.printListWithListNumber(items);
 		
 		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
