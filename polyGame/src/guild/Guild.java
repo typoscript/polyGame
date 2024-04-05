@@ -195,10 +195,11 @@ public class Guild {
 	
 	private void printMenu() {
 		System.out.println("=== 길드 관리 ===");
-		System.out.println("1) 길드원");
-		System.out.println("2) 증원");
-		System.out.println("3) 감원");
-		System.out.println("4) 파티원 교체");
+		System.out.println("1) 길드원 목록");
+		System.out.println("2) 길드원 증원");
+		System.out.println("3) 길드원 감원");
+		System.out.println("4) 파티원 목록");
+		System.out.println("5) 파티원 교체");
 		System.out.println("0) 뒤로가기");
 		System.out.println("==============");
 	}
