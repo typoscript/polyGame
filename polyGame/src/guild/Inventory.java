@@ -1,7 +1,9 @@
 package guild;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import hero.Hero;
 
@@ -11,7 +13,7 @@ import item.ItemUsable;
 import item.ItemWeapon;
 
 import main.Player;
-
+import main.Unit;
 import utils.Input;
 import utils.Print;
 
@@ -25,11 +27,35 @@ public class Inventory {
 		return items;
 	}
 	
-	public void useItem() {
-		for (Item item : items) {
+	public void useItem(Unit target) {
+		Map<ItemUsable, Integer> map = new HashMap<ItemUsable, Integer>();
+		
+		for (int i = 0; i < items.size(); i++) {
+			Item item = items.get(i);
+
 			if (item instanceof ItemUsable)
-				System.out.println(item);
+				map.put((ItemUsable)item, i);
 		}
+
+		if (map.isEmpty()) {
+			System.out.println("아이템이 없습니다");
+			return;
+		}
+		
+		List<ItemUsable> itemUsables = new ArrayList<ItemUsable>(map.keySet());
+		Print.printListWithListNumber(itemUsables);
+
+		int itemIndex = Input.getInputNumber("사용할 아이템의 숫자") - 1;
+		
+		if (itemIndex < 0 || itemIndex >= itemUsables.size()) {
+			System.out.println("잘못된 숫자입니다");
+			return;
+		}
+		
+		ItemUsable itemToUse = itemUsables.get(itemIndex);
+		itemToUse.use(target);
+		items.remove(itemToUse);
+		System.out.println("아이템 사용 성공");
 	}
 
 	public boolean hasItem(Item item) {
