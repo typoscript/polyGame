@@ -203,7 +203,7 @@ public class Guild {
 		System.out.println("2) 길드원 증원");
 		System.out.println("3) 길드원 감원");
 		System.out.println("4) 파티원 목록");
-		System.out.println("5) 파티원 교체");
+		System.out.println("5) 파티원 추가/교체");
 		System.out.println("0) 뒤로가기");
 		System.out.println("==============");
 	}
