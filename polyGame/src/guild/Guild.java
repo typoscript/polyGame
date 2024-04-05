@@ -12,6 +12,12 @@ import main.Input;
 import main.Print;
 
 public class Guild {
+	private final int MENU_MEMBER_VIEW_ALL = 1;
+	private final int MENU_MEMBER_HIRE = 2;
+	private final int MENU_MEMBER_FIRE = 3;
+	private final int MENU_PARTY_MEMBER_CHANGE = 4;
+	private final int MENU_GO_BACK = 0;
+
 	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
 	private int money = 1000;
 	private List<Hero> members = new ArrayList<Hero>();
@@ -49,16 +55,16 @@ public class Guild {
 			int menu = Input.getInputNumber("메뉴");
 			
 			switch (menu) {
-				case MEMBER_VIEW_ALL:
+				case MENU_MEMBER_VIEW_ALL:
 					printMemberAll();
 					break;
-				case MEMBER_HIRE:
+				case MENU_MEMBER_HIRE:
 					hireMember();
 					break;
-				case MEMBER_FIRE:
+				case MENU_MEMBER_FIRE:
 					fireMember();
 					break;
-				case PARTY_MEMBER_CHANGE:
+				case MENU_PARTY_MEMBER_CHANGE:
 					changePartyMember();
 					break;
 				case MENU_GO_BACK:
