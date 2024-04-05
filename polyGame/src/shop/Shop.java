@@ -150,6 +150,7 @@ public class Shop {
 					Player.guild.inventory.removeItem(item);
 					Player.guild.addMoney(sellingPrice);
 					System.out.println("판매 완료");
+					System.out.println("판매 후 장액: " + Player.guild.getMoney());
 					return;
 				case MENU_SELL_NO:
 					return;
