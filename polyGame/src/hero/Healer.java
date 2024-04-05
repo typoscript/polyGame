@@ -1,5 +1,6 @@
 package hero;
 
+import main.Player;
 import main.Unit;
 import utils.Input;
 
@@ -34,7 +35,8 @@ public class Healer extends Hero implements Actionable {
 	@Override
 	public void chooseAction(Unit attackTarget, Unit healTarget) {
 		final int ATTACK = 1;
-		final int HEAL = 2;
+		final int ITEM_USE = 2;
+		final int HEAL = 3;
 		
 		if (isSilent()) {
 			handleSilence();
@@ -42,12 +44,15 @@ public class Healer extends Hero implements Actionable {
 		}
 		
 		while (true) {
-			System.out.printf("[%s] 1) 공격 2) 힐\n", name);
+			System.out.printf("[%s] 1) 공격 2) 아이템 사용 3) 힐\n", name);
 			int action = Input.getInputNumber("메뉴");
 			
 			switch (action) {
 				case ATTACK:
 					attack(attackTarget);
+					return;
+				case ITEM_USE:
+					Player.guild.inventory.useItem(this);
 					return;
 				case HEAL:
 					heal(healTarget);
