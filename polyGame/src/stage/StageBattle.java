@@ -6,6 +6,7 @@ import java.util.List;
 import hero.Actionable;
 import hero.Healer;
 import main.GameManager;
+import main.Player;
 import main.Unit;
 import main.UnitManager;
 import main.UnitStatus;
@@ -112,6 +113,11 @@ public class StageBattle extends Stage {
 
 	@Override
 	public StageName run() {
+		if (Player.guild.isPartyEmpty()) {
+			System.out.println("파티원이 없습니다");
+			return StageName.LOBBY;
+		}
+
 		init();
 		
 		while (isRunning()) {
@@ -123,7 +129,9 @@ public class StageBattle extends Stage {
 		
 		if (heroes.size() == 0)
 			GameManager.isRunning = false;
-		
-		return StageName.NO_STAGE;
+		else
+			GameManager.levelUpStageLevel();
+
+		return StageName.LOBBY;
 	}
 }
