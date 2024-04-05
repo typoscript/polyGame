@@ -31,7 +31,7 @@ public class Warrior extends Hero implements Actionable {
 		}
 		
 		while (true) {
-			System.out.printf("[%s] 1) 공격 2) 아이템 사용\n", name);
+			System.out.printf("[%s] 1) 공격 2) 아이템 사용\n", printBattleStatus());
 			int action = Input.getInputNumber("메뉴");
 			
 			switch (action) {

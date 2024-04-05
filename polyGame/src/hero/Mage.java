@@ -43,7 +43,7 @@ public class Mage extends Hero implements Actionable {
 		}
 		
 		while (true) {
-			System.out.printf("[%s] 1) 공격 2) 아이템 사용 3) 공격력 증가 스킬\n", name);
+			System.out.printf("[%s] 1) 공격 2) 아이템 사용 3) 공격력 증가 스킬\n", printBattleStatus());
 			int action = Input.getInputNumber("메뉴");
 			
 			switch (action) {

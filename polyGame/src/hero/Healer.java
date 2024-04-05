@@ -44,7 +44,7 @@ public class Healer extends Hero implements Actionable {
 		}
 		
 		while (true) {
-			System.out.printf("[%s] 1) 공격 2) 아이템 사용 3) 힐\n", name);
+			System.out.printf("[%s] 1) 공격 2) 아이템 사용 3) 힐\n", printBattleStatus());
 			int action = Input.getInputNumber("메뉴");
 			
 			switch (action) {
