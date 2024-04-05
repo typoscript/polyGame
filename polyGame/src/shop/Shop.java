@@ -188,7 +188,7 @@ public class Shop {
 				case (ItemType.ARMOR):
 					itemArmors.add(new ItemArmor(name, price, stat));
 					break;
-				case (ItemType.POTION):
+				case (ItemType.HP_POTION):
 					itemUsables.add(new ItemUsable(name, price, stat));
 					break;
 			}
