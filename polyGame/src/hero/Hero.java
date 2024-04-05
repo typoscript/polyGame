@@ -24,6 +24,10 @@ public abstract class Hero extends Unit {
 		expExtraGainPercentage *= 1.1;
 	}
 	
+	public int getLevel() {
+		return level;
+	}
+	
 	public boolean hasParty() {
 		return hasParty;
 	}
