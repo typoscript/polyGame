@@ -2,11 +2,9 @@ package hero;
 
 import java.util.List;
 
-import item.Armor;
 import item.ItemArmor;
 import item.ItemUsable;
 import item.ItemWeapon;
-import item.Weapon;
 import main.Unit;
 
 public abstract class Hero extends Unit {
@@ -15,8 +13,8 @@ public abstract class Hero extends Unit {
 	protected int expMax = 100;
 
 	protected boolean hasParty;
-	protected Weapon weapon;
-	protected Armor armor;
+	protected ItemWeapon weapon;
+	protected ItemArmor armor;
 	protected List<ItemUsable> usableItems;
 	
 	public int getLevel() {
