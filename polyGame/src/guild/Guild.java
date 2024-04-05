@@ -139,14 +139,17 @@ public class Guild {
 		}
 
 		Print.printListWithListNumber(members);
-		int memberIndex = Input.getInputNumber("구조조정할 길드원의 숫자: ") - 1;
+		int index = Input.getInputNumber("구조조정할 길드원의 숫자: ") - 1;
 		
-		if (memberIndex < 0 || memberIndex >= members.size()) {
+		if (index < 0 || index >= members.size()) {
 			System.out.println("잘못된 숫자입니다");
 			return;
 		}
 		
-		members.remove(memberIndex);
+		Hero member = members.get(index);
+		
+		members.remove(member);
+		partyMembers.remove(member);
 		System.out.println("길드원 추방 성공");
 	}
 	
