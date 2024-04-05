@@ -1,9 +1,9 @@
 package stage;
 
-import main.Input;
 import main.Player;
 import main.UnitManager;
 import shop.Shop;
+import utils.Input;
 
 public class StageMarket extends Stage {
 	private final int GUILD_EDIT	= 1;
@@ -43,6 +43,7 @@ public class StageMarket extends Stage {
 			
 			switch (menu) {
 				case GUILD_EDIT:
+					Player.guild.run();
 					break;
 				case SHOP:
 					shop.run();
