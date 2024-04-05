@@ -21,6 +21,11 @@ public abstract class Unit {
 	}
 	
 	public void decreaseHp(int hp) {
+		hp -= armor;
+
+		if (hp < 0)
+			hp = 0;
+
 		this.hp -= hp;
 		
 		if (this.hp < 0)
