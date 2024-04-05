@@ -30,6 +30,10 @@ public class Guild {
 	public List<Hero> getMemberAll() {
 		return members;
 	}
+
+	public List<Hero> getPartyMemberAll() {
+		return partyMembers;
+	}
 	
 	public List<Item> getItemAll() {
 		return inventory.getItemAll();
