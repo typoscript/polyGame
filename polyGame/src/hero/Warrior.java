@@ -37,6 +37,7 @@ public class Warrior extends Hero implements Actionable {
 			switch (action) {
 				case ATTACK:
 					attack(target);
+					return;
 				case ITEM_USE:
 					Player.guild.inventory.useItem(this);
 					return;
