@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hero.Hero;
+
 import item.Armor;
 import item.Item;
 import item.ItemArmor;
 import item.ItemWeapon;
 import item.Weapon;
-import main.Input;
+
 import main.Player;
-import main.Print;
+
+import utils.Input;
+import utils.Print;
 
 public class Inventory {
 	private final int MENU_ITEM_EQUIP = 1;
