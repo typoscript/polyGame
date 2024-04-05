@@ -2,7 +2,7 @@ package item;
 
 import main.Unit;
 
-public abstract class ItemUsable extends Item implements Usable {
+public abstract class ItemUsable extends Item {
 	final int STAT;
 
 	public ItemUsable(String name, int price, int stat) {
@@ -10,7 +10,6 @@ public abstract class ItemUsable extends Item implements Usable {
 		this.STAT = stat;
 	}
 
-	@Override
 	public void use(Unit target) { }
 	
 	@Override
