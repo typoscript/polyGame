@@ -1,7 +1,7 @@
 package hero;
 
-import main.Input;
 import main.Unit;
+import utils.Input;
 
 public class Healer extends Hero implements Actionable {
 	private int healPower;
