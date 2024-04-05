@@ -8,6 +8,10 @@ public abstract class Unit {
 	protected String name;
 	protected UnitStatus status = UnitStatus.NORMAL;
 	
+	public int getHp() {
+		return hp;
+	}
+	
 	public String getName() {
 		return name;
 	}
