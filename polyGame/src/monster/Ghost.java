@@ -19,6 +19,6 @@ public class Ghost extends Unit {
 	public void silenceTarget(Unit target) {
 		target.setStatus(UnitStatus.SILENT);
 
-		System.out.printf("%s 1턴 침묵\n", target.getName());
+		System.out.printf("%s 다음턴 공격만 가능\n", target.getName());
 	}
 }
