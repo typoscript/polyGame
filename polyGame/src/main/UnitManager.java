@@ -11,7 +11,6 @@ public class UnitManager {
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
 	private static UnitManager instance = new UnitManager();
-	private ArrayList<Unit> heroes = new ArrayList<>();
 	private ArrayList<Unit> monsters = new ArrayList<>();
 	
 	public static UnitManager getInstance() {
