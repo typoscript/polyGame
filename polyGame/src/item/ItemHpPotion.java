@@ -2,7 +2,7 @@ package item;
 
 import main.Unit;
 
-public class ItemHpPotion extends ItemUsable {
+public class ItemHpPotion extends ItemUse {
 	public ItemHpPotion(String name, int price, int stat) {
 		super(name, price, stat);
 	}
@@ -10,6 +10,7 @@ public class ItemHpPotion extends ItemUsable {
 	@Override
 	public void use(Unit target) {
 		target.increaseHp(STAT);
+		System.out.printf("%s 회복후 체력: %d\n", target.getName(), target.getHp());
 	}
 	
 	@Override
