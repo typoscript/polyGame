@@ -9,6 +9,7 @@ import item.Item;
 public class Guild {
 	private int money = 1000;
 	private List<Hero> members = new ArrayList<Hero>();
+	private List<Hero> partyMembers = new ArrayList<Hero>();
 	public Inventory inventory = new Inventory();
 	
 	public List<Hero> getMemberAll() {
