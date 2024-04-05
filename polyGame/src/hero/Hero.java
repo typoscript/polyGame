@@ -33,11 +33,11 @@ public abstract class Hero extends Unit {
 		return armor != null;
 	}
 	
-	public void equipItem(Weapon weapon) {
+	public void equipItem(ItemWeapon weapon) {
 		this.weapon = weapon;
 	}
 
-	public void equipItem(Armor armor) {
+	public void equipItem(ItemArmor armor) {
 		this.armor = armor;
 	}
 	
