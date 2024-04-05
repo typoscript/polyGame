@@ -109,13 +109,15 @@ public class Guild {
 		}
 		
 		Hero hero = heroes.get(heroIndex);
+		int hireFee = hero.getLevel() * 1000;
 		
-		if (!canHireHero(hero)) {
+		if (hireFee > money) {
 			System.out.println("구매 금액이 부족합니다");
 			return;
 		}
 		
 		members.add(hero);
+		money -= hireFee;
 		System.out.println("고용 성공");
 		System.out.println("남은 자본금: " + money);
 	}
