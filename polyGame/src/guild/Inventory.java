@@ -9,7 +9,8 @@ import hero.Hero;
 
 import item.Item;
 import item.ItemArmor;
-import item.ItemUsable;
+import item.ItemFilter;
+import item.ItemUse;
 import item.ItemWeapon;
 
 import main.Player;
@@ -28,23 +29,14 @@ public class Inventory {
 	}
 	
 	public void useItem(Unit target) {
-		Map<ItemUsable, Integer> map = new HashMap<ItemUsable, Integer>();
-		
-		for (int i = 0; i < items.size(); i++) {
-			Item item = items.get(i);
+		List<Item> itemUsables = ItemFilter.filter(ItemFilter.USEABLE, items);
 
-			if (item instanceof ItemUsable)
-				map.put((ItemUsable)item, i);
-		}
-
-		if (map.isEmpty()) {
+		if (itemUsables.isEmpty()) {
 			System.out.println("아이템이 없습니다");
 			return;
 		}
 		
-		List<ItemUsable> itemUsables = new ArrayList<ItemUsable>(map.keySet());
 		Print.printListWithListNumber(itemUsables);
-
 		int itemIndex = Input.getInputNumber("사용할 아이템의 숫자") - 1;
 		
 		if (itemIndex < 0 || itemIndex >= itemUsables.size()) {
@@ -52,9 +44,9 @@ public class Inventory {
 			return;
 		}
 		
-		ItemUsable itemToUse = itemUsables.get(itemIndex);
-		itemToUse.use(target);
-		items.remove(itemToUse);
+		ItemUse item = (ItemUse)itemUsables.get(itemIndex);
+		item.use(target);
+		items.remove(item);
 		System.out.println("아이템 사용 성공");
 	}
 
@@ -90,15 +82,20 @@ public class Inventory {
 	}
 	
 	private void runItemEquip() {
-		if (items.isEmpty()) {
+		List<Item> weapons = ItemFilter.filter(ItemFilter.WEAPON, items);
+		List<Item> armors = ItemFilter.filter(ItemFilter.ARMOR, items);
+		List<Item> equipments = new ArrayList<>(weapons);
+		equipments.addAll(armors);
+
+		if (equipments.isEmpty()) {
 			System.out.println("길드 인벤토리에 아이템이 없습니다");
 			return;
 		}
 
-		Print.printListWithListNumber(items);
+		Print.printListWithListNumber(equipments);
 		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
 		
-		if (itemIndex < 0 || itemIndex >= items.size()) {
+		if (itemIndex < 0 || itemIndex >= equipments.size()) {
 			System.out.println("잘못된 숫자입니다");
 			return;
 		}
@@ -117,7 +114,7 @@ public class Inventory {
 			return;
 		}
 		
-		Item item = items.get(itemIndex);
+		Item item = equipments.get(itemIndex);
 		Hero member = members.get(memberIndex);
 		
 		if (item instanceof ItemWeapon) {
@@ -134,7 +131,7 @@ public class Inventory {
 			}
 
 			member.equipItem((ItemArmor)item);
-		}
+		} 
 		
 		items.remove(item);
 		System.out.println("착용 성공");
