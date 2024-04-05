@@ -10,9 +10,10 @@ import main.Player;
 import main.Unit;
 import main.UnitManager;
 import main.UnitStatus;
+import monster.MonsterManager;
 
 public class StageBattle extends Stage {
-	private UnitManager unitManager = UnitManager.getInstance();
+	private MonsterManager monsterManager = MonsterManager.getInstance();
 	private List<Unit> heroes = new ArrayList<Unit>();
 	private List<Unit> monsters = new ArrayList<Unit>();
 	
@@ -72,8 +73,7 @@ public class StageBattle extends Stage {
 			
 			try {
 				Thread.sleep(500);
-			} catch (Exception e) {
-			}
+			} catch (Exception e) { }
 		}
 	}
 	
@@ -103,8 +103,6 @@ public class StageBattle extends Stage {
 
 	@Override
 	public void init() {
-		heroes = unitManager.getHeroes();
-		
 		if (unitManager.isMonsterAllDead())
 			unitManager.spawnMonsters();
 		
