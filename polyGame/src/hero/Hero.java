@@ -61,11 +61,11 @@ public abstract class Hero extends Unit {
 	}
 	
 	public void joinParty() {
-		this.hasParty = true;
+		hasParty = true;
 	}
 
 	public void quitParty() {
-		this.hasParty = false;
+		hasParty = false;
 	}
 	
 	public String printBattleStatus() {
