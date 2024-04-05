@@ -40,6 +40,22 @@ public class Guild {
 		return true;
 	}
 	
+	public void hireMember() {
+		int numOfHeroes = 3;
+		List<Hero> heroes = getRandomHeroes(numOfHeroes);
+		
+		Print.printListWithListNumber(hereos);
+		int heroIndex = Input.getInputNumber("고용할 용병의 숫지: ");
+
+		if (heroIndex < 0 || heroIndex >= heroes.size()) {
+			System.out.println("잘못된 숫자입니다");
+			return;
+		}
+		
+		members.add(hereos.get(heroIndex));
+		System.out.println("고용 성공");
+	}
+	
 	public void fireMember() {
 		if (members.isEmpty()) {
 			System.out.println("길드원이 없습니다");
