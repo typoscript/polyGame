@@ -27,8 +27,13 @@ public class Shop {
 	private List<ItemArmor> itemArmors = new ArrayList<>();
 	private List<ItemUsable> itemUsables = new ArrayList<>();
 	
+	private boolean isItemsLoaded = false;
+	
 	public void run() {
-		loadItemsFromFile();
+		if (!isItemsLoaded) {
+			loadItemsFromFile();
+			isItemsLoaded = true;
+		}
 
 		while (true) {
 			printMenu();
