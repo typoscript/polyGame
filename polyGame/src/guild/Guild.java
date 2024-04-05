@@ -96,6 +96,12 @@ public class Guild {
 		return heroes;
 	}
 	
+	public boolean canHireHero(Hero hero) {
+		int hireFee = hero.getLevel() * 1000;
+
+		return money < hireFee;
+	}
+	
 	public void hireMember() {
 		int numOfHeroes = 3;
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
