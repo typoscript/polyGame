@@ -10,9 +10,10 @@ import item.ItemType;
 import item.ItemUsable;
 import item.ItemWeapon;
 import main.FileManager;
-import main.Input;
 import main.Player;
-import main.Print;
+
+import utils.Input;
+import utils.Print;
 
 public class Shop {
 	private final int MENU_BUY_ITEM = 1;
