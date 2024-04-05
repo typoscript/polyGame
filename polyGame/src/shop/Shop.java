@@ -109,8 +109,10 @@ public class Shop {
 		
 		Item item = items.get(itemIndex);
 		
-		if (item.PRICE > Player.guild.getMoney())
+		if (item.PRICE > Player.guild.getMoney()) {
 			System.out.println("돈 부족으로 구매 불가");
+			return;
+		}
 		
 		Player.guild.inventory.addItem(item);
 		Player.guild.spendMoney(item.PRICE);
