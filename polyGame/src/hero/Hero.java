@@ -67,6 +67,10 @@ public abstract class Hero extends Unit {
 	public void quitParty() {
 		this.hasParty = false;
 	}
+	
+	public String printBattleStatus() {
+		return String.format("%s | 체력: %d | 공격력: %d | 상태: %s", name, hp, attackPower, status);
+	}
 
 	abstract public void attack(Unit target);
 }
