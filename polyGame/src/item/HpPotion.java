@@ -2,10 +2,10 @@ package item;
 
 import main.Unit;
 
-public class HealPotion extends Item implements Usable {
+public class HpPotion extends Item implements Usable {
 	public final int HEAL_AMOUNT = 30;
 
-	public HealPotion() {
+	public HpPotion() {
 		super("회복약", 1000);
 	}
 
