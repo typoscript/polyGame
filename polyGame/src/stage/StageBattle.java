@@ -14,6 +14,7 @@ import monster.MonsterManager;
 
 public class StageBattle extends Stage {
 	private MonsterManager monsterManager = MonsterManager.getInstance();
+	private List<Unit> heroes = new ArrayList<Unit>();
 	private List<Unit> monsters = new ArrayList<Unit>();
 	
 	private void printUnitAll() {
