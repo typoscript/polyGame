@@ -123,6 +123,7 @@ public class Guild {
 		
 		members.add(hero);
 		System.out.println("고용 성공");
+		System.out.println("남은 자본금: " + money);
 	}
 	
 	public void fireMember() {
