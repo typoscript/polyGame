@@ -116,7 +116,7 @@ public class Shop {
 	}
 
 	private void runItemSell() {
-		List<Item> items = Player.guild.getItemAll();
+		List<Item> items = Player.guild.inventory.getItemAll();
 		
 		if (items.isEmpty()) {
 			System.out.println("길드 인벤토리에 아이템이 없습니다");
