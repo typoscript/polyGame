@@ -1,6 +1,6 @@
 package item;
 
-public class ItemWeapon extends Item implements Weapon {
+public class ItemWeapon extends Item {
 	final int ATTACK_POWER;
 
 	public ItemWeapon(String name, int price, int attackPower) {
