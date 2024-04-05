@@ -1,7 +1,7 @@
 package stage;
 
 import main.GameManager;
-import main.Input;
+import utils.Input;
 
 public class StageLobby extends Stage {
 	private final int MENU_BATTLE = 1;
