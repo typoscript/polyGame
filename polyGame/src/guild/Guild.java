@@ -3,7 +3,10 @@ package guild;
 import java.util.ArrayList;
 import java.util.List;
 
+import hero.Healer;
 import hero.Hero;
+import hero.Mage;
+import hero.Warrior;
 import item.Item;
 import main.Input;
 import main.Print;
@@ -38,6 +41,20 @@ public class Guild {
 		
 		this.money -= money;
 		return true;
+	}
+	
+	public Hero getRandomHero() {
+		Hero[] heroes = {
+				new Healer(),
+				new Mage(),
+				new Warrior(),
+			};
+
+		int minIndex = 0;
+		int maxIndex = heroes.length;
+		int randomIndex = (int)(Math.random() * maxIndex) + minIndex;
+
+		return heroes[randomIndex];
 	}
 	
 	public List<Hero> getRandomHeroes(int numOfHeroes) {
