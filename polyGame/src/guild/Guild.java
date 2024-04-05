@@ -58,6 +58,45 @@ public class Guild {
 		System.out.println("길드원 추방 성공");
 	}
 	
+	public void changePartyMember() {
+		if (partyMembers.size() == MAX_NUM_OF_PARTY_MEMBERS) {
+			System.out.println("파티가 만원입니다");
+			return;
+		}
+		
+		if (members.isEmpty()) {
+			System.out.println("길드원이 없습니다");
+			return;
+		}
+
+		Print.printListWithListNumber(members);
+		int memberIndex = Input.getInputNumber("파티에 추가할 길드원의 숫자: ");
+
+		if (memberIndex < 0 || memberIndex >= members.size()) {
+			System.out.println("잘못된 숫자입니다");
+			return;
+		}
+
+		Print.printListWithListNumber(partyMembers);
+		int partyMemberIndex = Input.getInputNumber("파티에서 추방할 파티원의 숫자: ");
+		
+		if (partyMemberIndex < 0 || partyMemberIndex >= partyMembers.size()) {
+			System.out.println("잘못된 숫자입니다");
+			return;
+		}
+		
+		Hero member = members.get(memberIndex);
+		
+		if (member.hasParty()) {
+			System.out.println("이미 파티원입니다");
+			return;
+		}
+		
+		member.joinParty();
+		partyMembers.add(member);
+		System.out.println("파티 가입 성공");
+	}
+	
 	public void printMenu() {
 		System.out.println("=== 길드 관리 ===");
 		System.out.println("1) 길드원 목록 2) 증원 3) 감원 4) 파티원 교체 0) 뒤로가기");
