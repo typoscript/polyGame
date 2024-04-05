@@ -113,6 +113,7 @@ public class Shop {
 			System.out.println("돈 부족으로 구매 불가");
 		
 		Player.guild.inventory.addItem(item);
+		Player.guild.spendMoney(item.PRICE);
 		System.out.println(item.NAME + " 구매 성공");
 	}
 
