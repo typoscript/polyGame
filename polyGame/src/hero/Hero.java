@@ -24,6 +24,10 @@ public abstract class Hero extends Unit {
 		expExtraGainPercentage *= 1.1;
 	}
 	
+	public boolean hasParty() {
+		return hasParty;
+	}
+	
 	public boolean hasWeapon() {
 		return weapon != null;
 	}
