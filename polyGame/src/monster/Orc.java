@@ -1,4 +1,4 @@
-package monsters;
+package monster;
 
 import main.Unit;
 
