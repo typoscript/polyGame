@@ -5,6 +5,7 @@ import java.util.List;
 
 import hero.Actionable;
 import hero.Healer;
+import hero.Hero;
 import main.GameManager;
 import main.Player;
 import main.Unit;
@@ -14,7 +15,7 @@ import monster.MonsterManager;
 
 public class StageBattle extends Stage {
 	private MonsterManager monsterManager = MonsterManager.getInstance();
-	private List<Unit> heroes = new ArrayList<Unit>();
+	private List<Hero> heroes = new ArrayList<Hero>();
 	private List<Unit> monsters = new ArrayList<Unit>();
 	
 	private void printUnitAll() {
@@ -103,6 +104,8 @@ public class StageBattle extends Stage {
 
 	@Override
 	public void init() {
+		heroes = Player.guild.getPartyMemberAll();
+
 		if (unitManager.isMonsterAllDead())
 			unitManager.spawnMonsters();
 		
