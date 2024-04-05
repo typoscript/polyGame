@@ -5,11 +5,9 @@ import java.util.List;
 
 import hero.Hero;
 
-import item.Armor;
 import item.Item;
 import item.ItemArmor;
 import item.ItemWeapon;
-import item.Weapon;
 
 import main.Player;
 
@@ -93,20 +91,20 @@ public class Inventory {
 		Item item = items.get(itemIndex);
 		Hero member = members.get(memberIndex);
 		
-		if (item instanceof Weapon) {
+		if (item instanceof ItemWeapon) {
 			if (member.hasWeapon()) {
 				System.out.println("이미 무기를 착용하고있습니다");	
 				return;
 			}
 
-			member.equipItem((Weapon)item);
-		} else if (item instanceof Armor) {
+			member.equipItem((ItemWeapon)item);
+		} else if (item instanceof ItemArmor) {
 			if (member.hasArmor()) {
 				System.out.println("이미 방어구를 착용하고있습니다");	
 				return;
 			}
 
-			member.equipItem((Armor)item);
+			member.equipItem((ItemArmor)item);
 		}
 		
 		items.remove(item);
