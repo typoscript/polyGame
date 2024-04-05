@@ -216,4 +216,13 @@ public class Guild {
 
 		Print.printListWithListNumber(members);
 	}
+	
+	private void printPartyMemberAll() {
+		if (partyMembers.isEmpty()) {
+			System.out.println("파티원이 없습니다");
+			return;
+		}
+
+		Print.printListWithListNumber(partyMembers);
+	}
 }
