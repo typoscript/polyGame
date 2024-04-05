@@ -105,11 +105,8 @@ public class StageBattle extends Stage {
 	@Override
 	public void init() {
 		heroes = Player.guild.getPartyMemberAll();
-
-		if (unitManager.isMonsterAllDead())
-			unitManager.spawnMonsters();
-		
-		monsters = unitManager.getMonsters();
+		monsterManager.spawnMonsters();
+		monsters = monsterManager.getMonsters();
 	}
 
 	@Override
