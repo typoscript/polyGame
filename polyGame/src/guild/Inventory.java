@@ -56,7 +56,7 @@ public class Inventory {
 	
 	private void runItemEquip() {
 		if (items.isEmpty()) {
-			System.out.println("인벤토리에 아이템이 없습니다");
+			System.out.println("길드 인벤토리에 아이템이 없습니다");
 			return;
 		}
 
