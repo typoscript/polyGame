@@ -152,12 +152,14 @@ public class Guild {
 	
 	public boolean firePartyMember() {
 		Print.printListWithListNumber(partyMembers);
-		int partyMemberIndex = Input.getInputNumber("파티에서 추방할 파티원의 숫자: ") - 1;
+		int index = Input.getInputNumber("파티에서 추방할 파티원의 숫자: ") - 1;
 		
-		if (partyMemberIndex < 0 || partyMemberIndex >= partyMembers.size()) {
+		if (index < 0 || index >= partyMembers.size()) {
 			System.out.println("잘못된 숫자입니다");
 			return false;
 		}
+		
+		partyMembers.remove(index);
 		
 		return true;
 	}
