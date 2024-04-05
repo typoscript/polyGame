@@ -40,6 +40,15 @@ public class Guild {
 		return true;
 	}
 	
+	public List<Hero> getRandomHeroes(int numOfHeroes) {
+		List<Hero> heroes = new ArrayList<Hero>();
+		
+		for (int i = 0; i < numOfHeroes; i++)
+			heroes.add(getRandomHero());
+		
+		return heroes;
+	}
+	
 	public void hireMember() {
 		int numOfHeroes = 3;
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
