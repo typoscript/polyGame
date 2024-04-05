@@ -45,7 +45,7 @@ public class Inventory {
 		ItemUse item = (ItemUse)itemUsables.get(itemIndex);
 		item.use(target);
 		items.remove(item);
-		System.out.println("아이템 사용 성공");
+		System.out.println(item.NAME + " 사용 성공");
 		
 		return true;
 	}
