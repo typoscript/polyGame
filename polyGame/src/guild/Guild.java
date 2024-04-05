@@ -7,9 +7,11 @@ import hero.Healer;
 import hero.Hero;
 import hero.Mage;
 import hero.Warrior;
+
 import item.Item;
-import main.Input;
-import main.Print;
+
+import utils.Input;
+import utils.Print;
 
 public class Guild {
 	private final int MENU_MEMBER_VIEW_ALL = 1;
