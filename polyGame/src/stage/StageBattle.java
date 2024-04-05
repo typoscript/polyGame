@@ -9,8 +9,6 @@ import hero.Hero;
 import main.GameManager;
 import main.Player;
 import main.Unit;
-import main.UnitManager;
-import main.UnitStatus;
 import monster.MonsterManager;
 
 public class StageBattle extends Stage {
