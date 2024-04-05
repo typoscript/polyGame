@@ -163,11 +163,6 @@ public class Guild {
 	}
 	
 	public void changePartyMember() {
-		if (partyMembers.size() == MAX_NUM_OF_PARTY_MEMBERS) {
-			System.out.println("파티가 만원입니다");
-			return;
-		}
-		
 		if (members.isEmpty()) {
 			System.out.println("길드원이 없습니다");
 			return;
