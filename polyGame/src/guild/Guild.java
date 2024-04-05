@@ -7,6 +7,7 @@ import hero.Hero;
 import item.Item;
 
 public class Guild {
+	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
 	private int money = 1000;
 	private List<Hero> members = new ArrayList<Hero>();
 	private List<Hero> partyMembers = new ArrayList<Hero>();
