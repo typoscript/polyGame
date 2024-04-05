@@ -174,4 +174,8 @@ public class Guild {
 		System.out.println("1) 길드원 목록 2) 증원 3) 감원 4) 파티원 교체 0) 뒤로가기");
 		System.out.println("==============");
 	}
+	
+	private void printMemberAll() {
+		Print.printListWithListNumber(members);
+	}
 }
