@@ -3,6 +3,7 @@ package shop;
 import java.util.ArrayList;
 import java.util.List;
 
+import item.HpPotion;
 import item.Item;
 import item.ItemArmor;
 import item.ItemType;
@@ -189,7 +190,7 @@ public class Shop {
 					itemArmors.add(new ItemArmor(name, price, stat));
 					break;
 				case (ItemType.HP_POTION):
-					itemUsables.add(new ItemUsable(name, price, stat));
+					itemUsables.add(new HpPotion(name, price, stat));
 					break;
 			}
 		}
