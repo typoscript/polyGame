@@ -46,7 +46,7 @@ public class Shop {
 					runMenuItemBuy();
 					break;
 				case MENU_SELL_ITEM:
-					runSellItem();
+					runItemSell();
 					break;
 				case MENU_QUIT:
 					System.out.println("상점 종료");
@@ -115,7 +115,7 @@ public class Shop {
 		System.out.println(item.NAME + " 구매 성공");
 	}
 
-	private void runSellItem() {
+	private void runItemSell() {
 		List<Item> items = Player.guild.getItemAll();
 		
 		if (items.isEmpty()) {
