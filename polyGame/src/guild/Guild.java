@@ -59,7 +59,7 @@ public class Guild {
 					printMemberAll();
 					break;
 				case MENU_MEMBER_HIRE:
-					hireMember();
+					hireHeroAsMember();
 					break;
 				case MENU_MEMBER_FIRE:
 					fireMember();
@@ -102,7 +102,7 @@ public class Guild {
 		return money < hireFee;
 	}
 	
-	public void hireMember() {
+	public void hireHeroAsMember() {
 		int numOfHeroes = 3;
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
 		
