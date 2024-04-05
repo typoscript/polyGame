@@ -11,7 +11,6 @@ import stage.StageMarket;
 import stage.StageName;
 
 public class GameManager {
-	public static Scanner sc = new Scanner(System.in);
 	public static boolean isRunning = true;
 	private static int stageLevel = 1;
 	private Map<StageName, Stage> stages = new HashMap<StageName, Stage>();
@@ -34,9 +33,6 @@ public class GameManager {
 			Stage stage = stages.get(currentStage);
 
 			currentStage = stage.run();
-			
-			if (currentStage == StageName.BATTLE)
-				stageLevel++;
 		}
 		
 		System.out.println("게임 종료");
