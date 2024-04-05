@@ -99,7 +99,7 @@ public class Guild {
 	public boolean canHireHero(Hero hero) {
 		int hireFee = hero.getLevel() * 1000;
 
-		return money < hireFee;
+		return money >= hireFee;
 	}
 	
 	public void hireHeroAsMember() {
