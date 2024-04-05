@@ -4,6 +4,7 @@ public abstract class Unit {
 	protected int hp;
 	protected int maxHp;
 	protected int attackPower;
+	protected int armor;
 	protected String name;
 	protected UnitStatus status = UnitStatus.NORMAL;
 	
