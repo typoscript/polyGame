@@ -1,6 +1,6 @@
 package hero;
 
-import main.Input;
+import utils.Input;
 import main.Unit;
 
 public class Mage extends Hero implements Actionable {
