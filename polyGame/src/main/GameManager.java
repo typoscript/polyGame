@@ -28,6 +28,10 @@ public class GameManager {
 		return stageLevel;
 	}
 
+	public static void levelUpStageLevel() {
+		stageLevel++;
+	}
+
 	public void run() {
 		while (isRunning) {
 			Stage stage = stages.get(currentStage);
