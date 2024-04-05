@@ -5,6 +5,8 @@ import java.util.List;
 
 import hero.Hero;
 import item.Item;
+import main.Input;
+import main.Print;
 
 public class Guild {
 	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
@@ -36,6 +38,24 @@ public class Guild {
 		
 		this.money -= money;
 		return true;
+	}
+	
+	public void fireMember() {
+		if (members.isEmpty()) {
+			System.out.println("길드원이 없습니다");
+			return;
+		}
+
+		Print.printListWithListNumber(members);
+		int memberIndex = Input.getInputNumber("구조조정할 길드원의 숫지: ");
+		
+		if (memberIndex < 0 || memberIndex >= members.size()) {
+			System.out.println("잘못된 숫자입니다");
+			return;
+		}
+		
+		members.remove(memberIndex);
+		System.out.println("길드원 추방 성공");
 	}
 	
 	public void printMenu() {
