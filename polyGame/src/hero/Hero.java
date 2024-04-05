@@ -20,10 +20,6 @@ public abstract class Hero extends Unit {
 	protected Armor armor;
 	protected List<ItemUsable> usableItems;
 	
-	public void increaseExpGain() {
-		expExtraGainPercentage *= 1.1;
-	}
-	
 	public int getLevel() {
 		return level;
 	}
