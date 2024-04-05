@@ -7,8 +7,9 @@ import item.Item;
 import item.ItemArmor;
 import item.ItemHpPotion;
 import item.ItemType;
-import item.ItemUsable;
+import item.ItemUse;
 import item.ItemWeapon;
+
 import main.FileManager;
 import main.Player;
 
@@ -27,7 +28,7 @@ public class Shop {
 	
 	private List<ItemWeapon> itemWeapons = new ArrayList<>();
 	private List<ItemArmor> itemArmors = new ArrayList<>();
-	private List<ItemUsable> itemUsables = new ArrayList<>();
+	private List<ItemUse> itemUsables = new ArrayList<>();
 	
 	private boolean isItemsLoaded = false;
 	
