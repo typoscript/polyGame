@@ -7,6 +7,7 @@ import hero.Hero;
 
 import item.Item;
 import item.ItemArmor;
+import item.ItemUsable;
 import item.ItemWeapon;
 
 import main.Player;
@@ -22,6 +23,13 @@ public class Inventory {
 	
 	public List<Item> getItemAll() {
 		return items;
+	}
+	
+	public void useItem() {
+		for (Item item : items) {
+			if (item instanceof ItemUsable)
+				System.out.println(item);
+		}
 	}
 
 	public boolean hasItem(Item item) {
@@ -63,11 +71,6 @@ public class Inventory {
 
 		Print.printListWithListNumber(items);
 		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
-		
-		if (items.size() == 0) {
-			System.out.println("아이템이 없습니다");
-			return;
-		}
 		
 		if (itemIndex < 0 || itemIndex >= items.size()) {
 			System.out.println("잘못된 숫자입니다");
