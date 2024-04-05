@@ -176,6 +176,11 @@ public class Guild {
 	}
 	
 	private void printMemberAll() {
+		if (members.isEmpty()) {
+			System.out.println("길드원이 없습니다");
+			return;
+		}
+
 		Print.printListWithListNumber(members);
 	}
 }
