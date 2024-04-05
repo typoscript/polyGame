@@ -1,6 +1,7 @@
 package stage;
 
 import main.Input;
+import main.Player;
 import main.UnitManager;
 import shop.Shop;
 
@@ -35,9 +36,9 @@ public class StageMarket extends Stage {
 	@Override
 	public StageName run() {
 		init();
-		printMenu();
 		
 		while (true) {
+			printMenu();
 			int menu = Input.getInputNumber("메뉴");
 			
 			switch (menu) {
@@ -47,6 +48,7 @@ public class StageMarket extends Stage {
 					shop.run();
 					break;
 				case INVENTORY:
+					Player.guild.inventory.run();
 					break;
 				case DATA_SAVE:
 					break;
