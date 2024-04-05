@@ -35,10 +35,6 @@ public class Guild {
 		return partyMembers;
 	}
 	
-	public List<Item> getItemAll() {
-		return inventory.getItemAll();
-	}
-	
 	public boolean isPartyEmpty() {
 		return partyMembers.size() == 0;
 	}
