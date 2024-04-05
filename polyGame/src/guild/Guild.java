@@ -44,7 +44,7 @@ public class Guild {
 		int numOfHeroes = 3;
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
 		
-		Print.printListWithListNumber(hereos);
+		Print.printListWithListNumber(heroes);
 		int heroIndex = Input.getInputNumber("고용할 용병의 숫지: ");
 
 		if (heroIndex < 0 || heroIndex >= heroes.size()) {
@@ -52,7 +52,7 @@ public class Guild {
 			return;
 		}
 		
-		members.add(hereos.get(heroIndex));
+		members.add(heroes.get(heroIndex));
 		System.out.println("고용 성공");
 	}
 	
