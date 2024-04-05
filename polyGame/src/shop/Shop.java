@@ -62,13 +62,13 @@ public class Shop {
 			
 			switch (menu) {
 				case MENU_BUY_WEAPON:
-					runBuyItem(ItemType.WEAPON);
+					runItemBuy(ItemType.WEAPON);
 					break;
 				case MENU_BUY_ARMOR:
-					runBuyItem(ItemType.ARMOR);
+					runItemBuy(ItemType.ARMOR);
 					break;
 				case MENU_BUY_POTION:
-					runBuyItem(ItemType.HP_POTION);
+					runItemBuy(ItemType.HP_POTION);
 					break;
 				case MENU_GO_BACK:
 					return;
@@ -76,7 +76,7 @@ public class Shop {
 		}
 	}
 	
-	private void runBuyItem(String type) {
+	private void runItemBuy(String type) {
 		List<Item> items = null;
 
 		switch (type) {
