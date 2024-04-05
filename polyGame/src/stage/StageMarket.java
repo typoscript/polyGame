@@ -1,7 +1,6 @@
 package stage;
 
 import main.Player;
-import main.UnitManager;
 import shop.Shop;
 import utils.Input;
 
@@ -14,7 +13,6 @@ public class StageMarket extends Stage {
 	private final int GO_BACK		= 0;
 
 	private Shop shop;
-	private UnitManager unitManager;
 	
 	private void printMenu() {
 		System.out.println("=== 시장 ===");
@@ -30,7 +28,6 @@ public class StageMarket extends Stage {
 	@Override
 	public void init() {
 		shop = new Shop();
-		unitManager = UnitManager.getInstance();
 	}
 
 	@Override
