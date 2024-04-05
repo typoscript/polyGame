@@ -10,7 +10,7 @@ import main.GameManager;
 import main.Unit;
 
 public class MonsterManager {
-	private final String PATH = "monsters.";
+	private final String PATH = "monster.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
 	private static MonsterManager instance = new MonsterManager();
 	private ArrayList<Unit> monsters = new ArrayList<>();
