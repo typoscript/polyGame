@@ -21,7 +21,7 @@ public class Guild {
 	private final int MENU_GO_BACK = 0;
 
 	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
-	private int money = 1000;
+	private int money = 10000;
 	private List<Hero> members = new ArrayList<Hero>();
 	private List<Hero> partyMembers = new ArrayList<Hero>();
 	public Inventory inventory = new Inventory();
@@ -103,7 +103,7 @@ public class Guild {
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
 		
 		Print.printListWithListNumber(heroes);
-		int heroIndex = Input.getInputNumber("고용할 용병의 숫자: ");
+		int heroIndex = Input.getInputNumber("고용할 용병의 숫자: ") - 1;
 
 		if (heroIndex < 0 || heroIndex >= heroes.size()) {
 			System.out.println("잘못된 숫자입니다");
@@ -131,7 +131,7 @@ public class Guild {
 		}
 
 		Print.printListWithListNumber(members);
-		int memberIndex = Input.getInputNumber("구조조정할 길드원의 숫지: ");
+		int memberIndex = Input.getInputNumber("구조조정할 길드원의 숫지: ") - 1;
 		
 		if (memberIndex < 0 || memberIndex >= members.size()) {
 			System.out.println("잘못된 숫자입니다");
@@ -154,7 +154,7 @@ public class Guild {
 		}
 
 		Print.printListWithListNumber(members);
-		int memberIndex = Input.getInputNumber("파티에 추가할 길드원의 숫자: ");
+		int memberIndex = Input.getInputNumber("파티에 추가할 길드원의 숫자: ") - 1;
 
 		if (memberIndex < 0 || memberIndex >= members.size()) {
 			System.out.println("잘못된 숫자입니다");
@@ -162,7 +162,7 @@ public class Guild {
 		}
 
 		Print.printListWithListNumber(partyMembers);
-		int partyMemberIndex = Input.getInputNumber("파티에서 추방할 파티원의 숫자: ");
+		int partyMemberIndex = Input.getInputNumber("파티에서 추방할 파티원의 숫자: ") - 1;
 		
 		if (partyMemberIndex < 0 || partyMemberIndex >= partyMembers.size()) {
 			System.out.println("잘못된 숫자입니다");
