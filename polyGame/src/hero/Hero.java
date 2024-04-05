@@ -66,6 +66,14 @@ public abstract class Hero extends Unit {
 
 		return String.format("무기: %s | 방어구: %s\n", statusWeapon, statusArmor);
 	}
+	
+	public void joinParty() {
+		this.hasParty = true;
+	}
+
+	public void quitParty() {
+		this.hasParty = false;
+	}
 
 	abstract public void attack(Unit target);
 }
