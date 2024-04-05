@@ -55,6 +55,12 @@ public class Inventory {
 	}
 	
 	private void runItemEquip() {
+		if (items.isEmpty()) {
+			System.out.println("인벤토리에 아이템이 없습니다");
+			return;
+		}
+
+
 		Print.printListWithListNumber(items);
 		int itemIndex = Input.getInputNumber("아이템 숫자") - 1;
 		
