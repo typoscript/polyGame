@@ -19,7 +19,9 @@ public class Inventory {
 	private final int MENU_ITEM_EQUIP = 1;
 	private final int MENU_ITEM_UNEQUIP = 2;
 	private final int MENU_GO_BACK = 0;
-	List<Item> items = new ArrayList<Item>();
+	private List<ItemWeapon> itemWeapons = new ArrayList<>();
+	private List<ItemArmor> itemArmors = new ArrayList<>();
+	private List<ItemUsable> itemUsables = new ArrayList<>();
 	
 	public List<Item> getItemAll() {
 		return items;
