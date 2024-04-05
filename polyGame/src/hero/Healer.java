@@ -52,8 +52,10 @@ public class Healer extends Hero implements Actionable {
 					attack(attackTarget);
 					return;
 				case ITEM_USE:
-					Player.guild.inventory.useItem(this);
-					return;
+					boolean isItemUsed = Player.guild.inventory.useItem(this);
+
+					if (isItemUsed)
+						return;
 				case HEAL:
 					heal(healTarget);
 					return;

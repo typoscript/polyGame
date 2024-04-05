@@ -51,8 +51,10 @@ public class Mage extends Hero implements Actionable {
 					attack(target);
 					return;
 				case ITEM_USE:
-					Player.guild.inventory.useItem(this);
-					return;
+					boolean isItemUsed = Player.guild.inventory.useItem(this);
+
+					if (isItemUsed)
+						return;
 				case SKILL:
 					increaseAttackPower();
 					return;
