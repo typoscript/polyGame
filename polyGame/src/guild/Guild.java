@@ -17,7 +17,8 @@ public class Guild {
 	private final int MENU_MEMBER_VIEW_ALL = 1;
 	private final int MENU_MEMBER_HIRE = 2;
 	private final int MENU_MEMBER_FIRE = 3;
-	private final int MENU_PARTY_MEMBER_CHANGE = 4;
+	private final int MENU_PARTY_MEMBER_VIEW_ALL = 4;
+	private final int MENU_PARTY_MEMBER_CHANGE = 5;
 	private final int MENU_GO_BACK = 0;
 
 	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
