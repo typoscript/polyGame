@@ -96,18 +96,12 @@ public class Guild {
 		return heroes;
 	}
 	
-	public boolean canHireHero(Hero hero) {
-		int hireFee = hero.getLevel() * 1000;
-
-		return money >= hireFee;
-	}
-	
 	public void hireHeroAsMember() {
 		int numOfHeroes = 3;
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
 		
 		Print.printListWithListNumber(heroes);
-		int heroIndex = Input.getInputNumber("고용할 용병의 숫지: ");
+		int heroIndex = Input.getInputNumber("고용할 용병의 숫자: ");
 
 		if (heroIndex < 0 || heroIndex >= heroes.size()) {
 			System.out.println("잘못된 숫자입니다");
