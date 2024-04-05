@@ -1,4 +1,4 @@
-package main;
+package monster;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,18 +6,20 @@ import java.util.List;
 import hero.Healer;
 import hero.Mage;
 import hero.Warrior;
+import main.GameManager;
+import main.Unit;
 
-public class UnitManager {
+public class MonsterManager {
 	private final String PATH = "monsters.";
 	private final String[] monsterClassNames = { "Mushroom", "Ghost", "Orc" };
-	private static UnitManager instance = new UnitManager();
+	private static MonsterManager instance = new MonsterManager();
 	private ArrayList<Unit> monsters = new ArrayList<>();
 	
-	public static UnitManager getInstance() {
+	public static MonsterManager getInstance() {
 		return instance;
 	}
 	
-	private UnitManager() {
+	private MonsterManager() {
 		spawnMonsters(GameManager.getStageLevel());
 	}
 	
