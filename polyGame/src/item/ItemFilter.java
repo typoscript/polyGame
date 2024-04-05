@@ -12,7 +12,7 @@ public class ItemFilter {
 		List<Item> filteredItems = new ArrayList<Item>();
 
 		for (Item item : items) {
-			if (item.getClass().equals(type))
+			if (type.isInstance(item))
 				filteredItems.add(item);
 		}
 
