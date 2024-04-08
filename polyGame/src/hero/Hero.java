@@ -3,6 +3,7 @@ package hero;
 import item.ItemArmor;
 import item.ItemWeapon;
 import main.Unit;
+import main.UnitStatus;
 
 public abstract class Hero extends Unit {
 	protected int level = 1;
@@ -12,6 +13,19 @@ public abstract class Hero extends Unit {
 	protected boolean hasParty;
 	protected ItemWeapon weapon;
 	protected ItemArmor armor;
+	
+	public Hero(String name, int level, int hp, int maxHp, int attackPower, int armorPower, int exp, UnitStatus status, boolean hasParty, ItemWeapon weapon, ItemArmor armor) {
+		this.name = name;
+		this.level = level;
+		this.hp = hp;
+		this.maxHp = maxHp;
+		this.attackPower = attackPower;
+		this.armorPower = armorPower;
+		this.status = status;
+		this.hasParty = hasParty;
+		this.weapon = weapon;
+		this.armor = armor;
+	}
 	
 	public int getLevel() {
 		return level;
