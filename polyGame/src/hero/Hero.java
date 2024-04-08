@@ -17,6 +17,10 @@ public abstract class Hero extends Unit {
 		return level;
 	}
 	
+	public int getExp() {
+		return exp;
+	}
+	
 	public boolean hasParty() {
 		return hasParty;
 	}
