@@ -23,8 +23,8 @@ public class FileManager {
 	private static BufferedReader br;
 	
 	public static void saveGameData() {
+		saveHeroData(); // hero 저장 시, hero의 장비를 벗기고 인벤토리에 item 저장
 		saveGuildData();
-		saveHeroData();
 	}
 	
 	private static void saveGuildData() {
@@ -61,8 +61,18 @@ public class FileManager {
 		
 		for (int i = 0; i < members.size(); i++) {
 			Hero hero = members.get(i);
-			String weaponName = hero.getWeapon() == null ? "NONE" : hero.getWeapon().NAME;
-			String armorName = hero.getArmor() == null ? "NONE" : hero.getArmor().NAME;
+			String weaponName = "NONE";
+			String armorName = "NONE";
+			
+			if (hero.hasWeapon()) {
+				weaponName = hero.getWeapon().NAME;
+				Player.guild.inventory.addItem(hero.unEquipWeapon());
+			}
+
+			if (hero.hasArmor()) {
+				armorName = hero.getArmor().NAME;
+				Player.guild.inventory.addItem(hero.unEquipArmor());
+			}
 
 			data += hero.getName() + "/" +
 					hero.getStatus() + "/" +
