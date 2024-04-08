@@ -50,10 +50,10 @@ public class StageMarket extends Stage {
 					Player.guild.inventory.run();
 					break;
 				case DATA_SAVE:
-					FileManager.saveHeroData();
+					FileManager.saveGameData();
 					break;
 				case DATA_LOAD:
-					Player.guild.loadMembersFromFile();
+					Player.guild.loadGameData();
 					break;
 				case GO_BACK:
 					return StageName.LOBBY;
