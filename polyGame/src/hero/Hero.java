@@ -8,7 +8,7 @@ import main.UnitStatus;
 public abstract class Hero extends Unit {
 	protected int level = 1;
 	protected int exp = 0;
-	protected final int expMax = 100;
+	protected final int EXP_MAX = 100;
 
 	protected boolean hasParty;
 	protected ItemWeapon weapon;
@@ -93,7 +93,7 @@ public abstract class Hero extends Unit {
 	public void increaseExp(int exp) {
 		this.exp += exp;
 		
-		if (this.exp >= expMax)
+		if (this.exp >= EXP_MAX)
 			levelUp();
 	}
 	
