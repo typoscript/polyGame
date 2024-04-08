@@ -43,6 +43,7 @@ public abstract class Hero extends Unit {
 		ItemWeapon weapon = ((ItemWeapon)this.weapon).clone();
 		
 		this.weapon = null;
+		attackPower -= weapon.ATTACK_POWER;
 		
 		return weapon;
 	}
