@@ -19,6 +19,7 @@ import utils.Print;
 public class Inventory {
 	private final int MENU_ITEM_EQUIP = 1;
 	private final int MENU_ITEM_UNEQUIP = 2;
+	private final int MENU_ITEM_VIEW_ALL = 3;
 	private final int MENU_GO_BACK = 0;
 	private List<Item> items = new ArrayList<Item>();
 	
