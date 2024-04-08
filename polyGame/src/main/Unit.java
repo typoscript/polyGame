@@ -44,8 +44,10 @@ public abstract class Unit {
 
 		this.hp -= hp;
 		
-		if (this.hp < 0)
+		if (this.hp < 0) {
+			status = UnitStatus.DEAD;
 			this.hp = 0;
+		}
 	}
 	
 	public void increaseHp(int hp) {
