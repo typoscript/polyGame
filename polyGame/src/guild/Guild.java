@@ -201,6 +201,11 @@ public class Guild {
 		System.out.println("파티 가입 성공");
 	}
 	
+	public void increasePartyMembersExp(int exp) {
+		for (Hero member : partyMembers)
+			member.gainExp(exp);
+	}
+	
 	private void printMenu() {
 		System.out.println("=== 길드 관리 ===");
 		System.out.println("1) 길드원 목록");
