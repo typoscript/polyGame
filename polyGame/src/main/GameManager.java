@@ -12,7 +12,6 @@ import stage.StageName;
 
 public class GameManager {
 	public static boolean isRunning = true;
-	private static int stageLevel = 1;
 	private Map<StageName, Stage> stages = new HashMap<StageName, Stage>();
 	private StageName currentStage;
 	
@@ -24,14 +23,6 @@ public class GameManager {
 		currentStage = StageName.LOBBY;
 	}
 	
-	public static int getStageLevel() {
-		return stageLevel;
-	}
-
-	public static void levelUpStageLevel() {
-		stageLevel++;
-	}
-
 	public void run() {
 		while (isRunning) {
 			Stage stage = stages.get(currentStage);
