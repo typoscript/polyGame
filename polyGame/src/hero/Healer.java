@@ -1,7 +1,10 @@
 package hero;
 
+import item.ItemArmor;
+import item.ItemWeapon;
 import main.Player;
 import main.Unit;
+import main.UnitStatus;
 import utils.Input;
 
 public class Healer extends Hero implements Actionable {
@@ -12,7 +15,12 @@ public class Healer extends Hero implements Actionable {
 		maxHp = 150;
 		hp = maxHp;
 		attackPower = 10;
-		healPower = 10;
+		healPower = attackPower;
+	}
+
+	public Healer(String name, int level, int hp, int maxHp, int attackPower, int armorPower, int exp, UnitStatus status, boolean hasParty, ItemWeapon weapon, ItemArmor armor) {
+		super(name, level, hp, maxHp, attackPower, armorPower, exp, status, hasParty, weapon, armor);
+		this.healPower = attackPower;
 	}
 
 	public void heal(Unit target) {
