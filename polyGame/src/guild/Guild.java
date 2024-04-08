@@ -239,6 +239,11 @@ public class Guild {
 			member.increaseExp(exp);
 	}
 	
+	public void loadGameData() {
+		loadGuildDataFromFile();
+		loadMembersFromFile();
+	}
+	
 	private void loadGuildDataFromFile() {
 		inventory.clearItems();
 		String data = FileManager.getDataFromFile(FileManager.HERO_FILE_NAME);
