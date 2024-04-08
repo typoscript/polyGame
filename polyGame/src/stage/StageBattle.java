@@ -57,8 +57,10 @@ public class StageBattle extends Stage {
 	}
 
 	private void takeTurnHeroes() {
-		for (Unit hero : heroes)
-			takeActionHero((Actionable) hero);
+		for (Unit hero : heroes) {
+			if (!hero.isDead())
+				takeActionHero((Actionable) hero);
+		}
 	}
 	
 	private void takeActionHero(Actionable hero) {
