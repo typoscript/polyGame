@@ -5,11 +5,15 @@ import java.util.List;
 
 import hero.Healer;
 import hero.Hero;
+import hero.HeroNames;
 import hero.Mage;
 import hero.Warrior;
 
 import item.Item;
-
+import item.ItemArmor;
+import item.ItemWeapon;
+import main.FileManager;
+import main.UnitStatus;
 import utils.Input;
 import utils.Print;
 
@@ -213,6 +217,66 @@ public class Guild {
 	public void increasePartyMembersExp(int exp) {
 		for (Hero member : partyMembers)
 			member.increaseExp(exp);
+	}
+	
+	public void loadMembersFromFile() {
+		members = new ArrayList<Hero>();
+		partyMembers = new ArrayList<Hero>();
+
+		String data = FileManager.getDataFromFile(FileManager.HERO_FILE_NAME);
+		
+		String[] membersInfo = data.split("\n");
+		
+		for (String memberInfo : membersInfo) {
+			String[] info = memberInfo.split("/");
+			
+			String name = info[0];
+			UnitStatus status = UnitStatus.valueOf(info[1]);
+			boolean hasParty = Boolean.parseBoolean(info[2]);
+			String weaponName = info[3];
+			String armorName = info[4];
+			
+			int level = Integer.parseInt(info[5]);
+			int hp = Integer.parseInt(info[6]);
+			int maxHp = Integer.parseInt(info[7]);
+
+			int attackPower = Integer.parseInt(info[8]);
+			int armorPower = Integer.parseInt(info[9]);
+			int exp = Integer.parseInt(info[10]);
+
+			Hero hero = null;
+			ItemWeapon weapon = null;
+			ItemArmor armor = null;
+			
+			List<Item> items = inventory.getItemAll();
+			
+			for (Item item : items) {
+				if (item.NAME.equals(weaponName)) {
+					weapon = (ItemWeapon) item;
+					items.remove(item);
+				} else if (item.NAME.equals(armorName)) {
+					armor = (ItemArmor) item;
+					items.remove(item);
+				}
+			}
+			
+			switch (name) {
+				case HeroNames.WARRIOR:
+					hero = new Warrior(name, level, hp, maxHp, attackPower, armorPower, exp, status, hasParty, weapon, armor);
+					break;
+				case HeroNames.MAGE:
+					hero = new Mage(name, level, hp, maxHp, attackPower, armorPower, exp, status, hasParty, weapon, armor);
+					break;
+				case HeroNames.HEALER:
+					hero = new Healer(name, level, hp, maxHp, attackPower, armorPower, exp, status, hasParty, weapon, armor);
+					break;
+			}
+
+			members.add(hero);
+
+			if (hasParty)
+				partyMembers.add(hero);
+		}
 	}
 	
 	private void printMenu() {
