@@ -315,7 +315,9 @@ public class Guild {
 			
 			List<Item> items = inventory.getItemAll();
 			
-			for (Item item : items) {
+			for (int i = 0; i < items.size(); i++) {
+				Item item = items.get(i);
+
 				if (item.NAME.equals(weaponName)) {
 					weapon = (ItemWeapon) item;
 					items.remove(item);
