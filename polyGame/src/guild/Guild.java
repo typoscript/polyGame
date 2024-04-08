@@ -203,7 +203,7 @@ public class Guild {
 	
 	public void increasePartyMembersExp(int exp) {
 		for (Hero member : partyMembers)
-			member.gainExp(exp);
+			member.increaseExp(exp);
 	}
 	
 	private void printMenu() {
