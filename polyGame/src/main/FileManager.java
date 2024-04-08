@@ -28,7 +28,7 @@ public class FileManager {
 	}
 	
 	private static void saveGuildData() {
-		String guildData = GameManager.getStageLevel() + "/" + Player.guild.getMoney();
+		String guildData = Player.guild.getStageLevel() + "/" + Player.guild.getMoney();
 		List<Item> items = Player.guild.inventory.getItemAll();
 		
 		for (Item item : items) {
