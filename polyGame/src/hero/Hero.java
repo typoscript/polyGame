@@ -21,6 +21,14 @@ public abstract class Hero extends Unit {
 		return exp;
 	}
 	
+	public ItemWeapon getWeapon() {
+		return weapon;
+	}
+
+	public ItemArmor getArmor() {
+		return armor;
+	}
+	
 	public boolean hasParty() {
 		return hasParty;
 	}
