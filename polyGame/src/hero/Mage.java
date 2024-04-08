@@ -6,7 +6,7 @@ import main.Unit;
 
 public class Mage extends Hero implements Actionable {
 	public Mage() {
-		name = "마법사";
+		name = HeroNames.MAGE;
 		maxHp = 100;
 		hp = maxHp;
 		attackPower = 20;
