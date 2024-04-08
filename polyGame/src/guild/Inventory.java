@@ -109,7 +109,7 @@ public class Inventory {
 
 		System.out.println("=== 리스트 ===");
 		for (int i = 0; i < members.size(); i++)
-			System.out.printf("%d. %s\n", i + 1, members.get(i).getStatusOfWearables());
+			System.out.printf("%d. %s | %s\n", i + 1, members.get(i).getName(), members.get(i).getStatusOfWearables());
 		System.out.println("============");
 		
 		int memberIndex = Input.getInputNumber("길드원의 숫자") - 1;
@@ -152,7 +152,7 @@ public class Inventory {
 
 		System.out.println("=== 리스트 ===");
 		for (int i = 0; i < members.size(); i++)
-			System.out.printf("%d. %s\n", i + 1, members.get(i).getStatusOfWearables());
+			System.out.printf("%d. %s | %s\n", i + 1, members.get(i).getName(), members.get(i).getStatusOfWearables());
 		System.out.println("============");
 
 		int memberIndex = Input.getInputNumber("길드원의 숫자") - 1;
@@ -169,7 +169,6 @@ public class Inventory {
 
 		while (true) {
 			int menu = Input.getInputNumber("벗기 1) 무기 2) 방어구");
-
 			switch (menu) {
 				case MENU_WEAPON:
 					if (!member.hasWeapon()) {
@@ -177,18 +176,19 @@ public class Inventory {
 						return;
 					}
 					
-					ItemWeapon item = member.unEquipWeapon();
-					items.add(item);
-					break;
+					items.add(member.unEquipWeapon());
+					System.out.println("무기 벗기 성공");
+					return;
 				case MENU_ARMOR:
-					if (!member.hasArmor())
+					if (!member.hasArmor()) {
 						System.out.println("방어구가 없습니다");
 						return;
 					}
 
-					ItemArmor item = member.unEquipArmor();
-					items.add(item);
-					break;
+					items.add(member.unEquipArmor());
+					System.out.println("방어구 벗기 성공");
+					return;
+				}
 		}
 	}
 	
