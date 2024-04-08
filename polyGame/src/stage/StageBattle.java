@@ -123,10 +123,14 @@ public class StageBattle extends Stage {
 			attackHeroesByMonsters();
 		}
 		
-		if (heroes.size() == 0)
+		if (heroes.size() == 0) {
 			GameManager.isRunning = false;
-		else
+		} else {
 			GameManager.levelUpStageLevel();
+			int money = getStageClearMoney();
+			Player.guild.addMoney(money);
+			System.out.println("스테이지 클리어 상금: " + money);
+		}
 
 		return StageName.LOBBY;
 	}
