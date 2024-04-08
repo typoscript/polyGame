@@ -74,7 +74,7 @@ public abstract class Hero extends Unit {
 		String statusWeapon = hasWeapon() ? "있음" : "없음";
 		String statusArmor = hasArmor() ? "있음" : "없음";
 
-		return String.format("무기: %s | 방어구: %s\n", statusWeapon, statusArmor);
+		return String.format("무기: %s | 방어구: %s", statusWeapon, statusArmor);
 	}
 	
 	public void joinParty() {
