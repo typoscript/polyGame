@@ -117,6 +117,18 @@ public class StageBattle extends Stage {
 		Player.guild.increasePartyMembersExp(exp);
 		System.out.printf("스테이지 클리어 상금: %d | 획득 경험치: %d\n", money, exp);
 	}
+	
+	private boolean isValidParty() {
+		if (Player.guild.isPartyEmpty()) {
+			System.out.println("파티원이 없습니다");
+			return false;
+		}
+		
+		if (Player.guild.isMemberDead()) {
+			System.out.println("파티원중 사망자가 있습니다");
+			return false;
+		}
+	}
 
 	@Override
 	public void init() {
