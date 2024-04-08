@@ -1,7 +1,7 @@
 package item;
 
 public class ItemArmor extends Item { 
-	final int ARMOR;
+	public final int ARMOR;
 
 	public ItemArmor(String name, int price, int armor) {
 		super(name, price);
