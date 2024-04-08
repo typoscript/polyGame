@@ -58,7 +58,7 @@ public abstract class Unit {
 	}
 	
 	public boolean isDead() {
-		return hp == 0;
+		return status == UnitStatus.DEAD;
 	}
 	
 	public boolean isSilent() {
