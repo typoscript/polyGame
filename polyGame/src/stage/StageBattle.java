@@ -110,11 +110,12 @@ public class StageBattle extends Stage {
 	
 	private void handleStageClear() {
 		int money = getStageClearMoney();
+		int exp = getStageClearExp();
 		GameManager.levelUpStageLevel();
 
 		Player.guild.addMoney(money);
-		Player.guild.increasePartyMembersExp(getStageClearExp());
-		System.out.println("스테이지 클리어 상금: " + money);
+		Player.guild.increasePartyMembersExp(exp);
+		System.out.printf("스테이지 클리어 상금: %d | 획득 경험치: %d\n", money, exp);
 	}
 
 	@Override
