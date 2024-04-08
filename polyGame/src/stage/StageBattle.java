@@ -103,6 +103,15 @@ public class StageBattle extends Stage {
 	private int getStageClearMoney() {
 		return GameManager.getStageLevel() * 1000;
 	}
+	
+	private void handleStageClear() {
+		int money = getStageClearMoney();
+		GameManager.levelUpStageLevel();
+
+		Player.guild.addMoney(money);
+		Player.guild.gainExpToPartyMembers();
+		System.out.println("스테이지 클리어 상금: " + money);
+	}
 
 	@Override
 	public void init() {
