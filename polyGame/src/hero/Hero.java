@@ -31,6 +31,7 @@ public abstract class Hero extends Unit {
 	
 	public void equipItem(ItemWeapon weapon) {
 		this.weapon = weapon;
+		attackPower += weapon.ATTACK_POWER;
 	}
 
 	public void equipItem(ItemArmor armor) {
