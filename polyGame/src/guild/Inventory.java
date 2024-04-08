@@ -200,6 +200,7 @@ public class Inventory {
 		System.out.println("=== 인벤토리 ===");
 		System.out.println("1) 착용");
 		System.out.println("2) 벗기");
+		System.out.println("3) 아이템 목록");
 		System.out.println("0) 뒤로가기");
 	}
 }
