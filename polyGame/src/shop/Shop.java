@@ -178,16 +178,16 @@ public class Shop {
 	}
 	
 	private void loadItemsFromFile() {
-		String fileData = FileManager.getDataFromFile(FileManager.SHOP_ITEM_FILE_NAME);
-		String[] items = fileData.split("\n");
+		String data = FileManager.getDataFromFile(FileManager.SHOP_ITEM_FILE_NAME);
+		String[] items = data.split("\n");
 		
 		for (String item : items) {
-			String[] data = item.split("/");
+			String[] itemInfo = item.split("/");
 			
-			String type = data[0];
-			String name = data[1];
-			int price = Integer.parseInt(data[2]);
-			int stat = Integer.parseInt(data[3]);
+			String type = itemInfo[0];
+			String name = itemInfo[1];
+			int price = Integer.parseInt(itemInfo[2]);
+			int stat = Integer.parseInt(itemInfo[3]);
 			
 			switch (type) {
 				case (ItemType.WEAPON):
