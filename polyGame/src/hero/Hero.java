@@ -14,6 +14,8 @@ public abstract class Hero extends Unit {
 	protected ItemWeapon weapon;
 	protected ItemArmor armor;
 	
+	public Hero() { }
+	
 	public Hero(String name, int level, int hp, int maxHp, int attackPower, int armorPower, int exp, UnitStatus status, boolean hasParty, ItemWeapon weapon, ItemArmor armor) {
 		this.name = name;
 		this.level = level;
