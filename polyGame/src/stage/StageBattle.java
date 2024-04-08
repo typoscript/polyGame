@@ -99,6 +99,10 @@ public class StageBattle extends Stage {
 	private boolean isRunning() {
 		return heroes.size() > 0 && monsters.size() > 0;
 	}
+	
+	private int getStageClearMoney() {
+		return GameManager.getStageLevel() * 1000;
+	}
 
 	@Override
 	public void init() {
