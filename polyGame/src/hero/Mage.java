@@ -1,8 +1,11 @@
 package hero;
 
 import utils.Input;
+import item.ItemArmor;
+import item.ItemWeapon;
 import main.Player;
 import main.Unit;
+import main.UnitStatus;
 
 public class Mage extends Hero implements Actionable {
 	public Mage() {
@@ -10,6 +13,10 @@ public class Mage extends Hero implements Actionable {
 		maxHp = 100;
 		hp = maxHp;
 		attackPower = 20;
+	}
+
+	public Mage(String name, int level, int hp, int maxHp, int attackPower, int armorPower, int exp, UnitStatus status, boolean hasParty, ItemWeapon weapon, ItemArmor armor) {
+		super(name, level, hp, maxHp, attackPower, armorPower, exp, status, hasParty, weapon, armor);
 	}
 	
 	public void increaseAttackPower() {
