@@ -36,7 +36,7 @@ public abstract class Hero extends Unit {
 
 	public void equipItem(ItemArmor armor) {
 		this.armor = armor;
-		armorPower += armor.ARMOR;
+		armorPower += armor.ARMOR_POWER;
 	}
 	
 	public ItemWeapon unEquipWeapon() {
@@ -52,6 +52,7 @@ public abstract class Hero extends Unit {
 		ItemArmor armor = ((ItemArmor)this.armor).clone();
 
 		this.armor = null;
+		armorPower -= armor.ARMOR_POWER;
 
 		return armor;
 	}
