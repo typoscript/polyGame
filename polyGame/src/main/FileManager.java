@@ -26,16 +26,18 @@ public class FileManager {
 			String armorName = hero.getArmor() == null ? "NONE" : hero.getArmor().NAME;
 
 			data += hero.getName() + "/" +
+					hero.getStatus() + "/" +
+					hero.hasParty() + "/" +
+					weaponName + "/" +
+					armorName + "/" +
+
 					hero.getLevel() + "/" +
 					hero.getHp() + "/" +
 					hero.getMaxHp() + "/" +
+
 					hero.getAttackPower() + "/" +
 					hero.getArmorPower() + "/" +
-					hero.getStatus() + "/" +
-					hero.getExp() + "/" +
-					hero.hasParty() + "/" +
-					weaponName + "/" +
-					armorName;
+					hero.getExp();
 			
 			if (i < members.size() - 1)
 				data += "\n";
