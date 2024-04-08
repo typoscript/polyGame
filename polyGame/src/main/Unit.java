@@ -12,6 +12,14 @@ public abstract class Unit {
 		return hp;
 	}
 	
+	public int getAttackPower() {
+		return attackPower;
+	}
+
+	public int getArmorPower() {
+		return armorPower;
+	}
+	
 	public String getName() {
 		return name;
 	}
