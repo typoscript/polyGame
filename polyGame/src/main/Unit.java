@@ -4,7 +4,7 @@ public abstract class Unit {
 	protected int hp;
 	protected int maxHp;
 	protected int attackPower;
-	protected int armor;
+	protected int armorPower;
 	protected String name;
 	protected UnitStatus status = UnitStatus.NORMAL;
 	
@@ -25,7 +25,7 @@ public abstract class Unit {
 	}
 	
 	public void decreaseHp(int hp) {
-		hp -= armor;
+		hp -= armorPower;
 
 		if (hp < 0)
 			hp = 0;
