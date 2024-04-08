@@ -124,7 +124,7 @@ public class StageBattle extends Stage {
 			return false;
 		}
 		
-		if (Player.guild.isMemberDead()) {
+		if (Player.guild.isPartyMemberDead()) {
 			System.out.println("파티원중 사망자가 있습니다");
 			return false;
 		}
