@@ -1,5 +1,6 @@
 package stage;
 
+import main.FileManager;
 import main.Player;
 import shop.Shop;
 import utils.Input;
@@ -49,14 +50,14 @@ public class StageMarket extends Stage {
 					Player.guild.inventory.run();
 					break;
 				case DATA_SAVE:
+					FileManager.saveHeroData();
 					break;
 				case DATA_LOAD:
+					Player.guild.loadMembersFromFile();
 					break;
 				case GO_BACK:
 					return StageName.LOBBY;
 			}
 		}
-		
-		//return StageName.LOBBY;
 	}
 }
