@@ -89,10 +89,8 @@ public class StageBattle extends Stage {
 		for (int i = 0; i < heroes.size(); i++) {
 			Unit hero = heroes.get(i);
 
-			if (hero.isDead()) {
-				heroes.remove(hero);
+			if (hero.isDead())
 				System.out.printf("%s 사망\n", hero.getName());
-			}
 		}
 
 		for (int i = 0; i < monsters.size(); i++) {
