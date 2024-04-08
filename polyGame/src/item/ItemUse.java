@@ -3,11 +3,8 @@ package item;
 import main.Unit;
 
 public abstract class ItemUse extends Item {
-	final int STAT;
-
 	public ItemUse(String name, int price, int stat) {
-		super(name, price);
-		this.STAT = stat;
+		super(name, price, stat);
 	}
 
 	public void use(Unit target) { }
