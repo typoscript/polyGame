@@ -2,5 +2,6 @@ package main;
 
 public enum UnitStatus {
 	NORMAL,
-	SILENT;
+	SILENT,
+	DEAD;
 }
