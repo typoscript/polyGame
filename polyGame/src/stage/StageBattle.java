@@ -62,7 +62,7 @@ public class StageBattle extends Stage {
 	}
 	
 	private void takeActionHero(Actionable hero) {
-		if (monsters.isEmpty())
+		if (isGroupAllDead(monsters))
 			return;
 
 		Unit monster = getRandomMonster();
