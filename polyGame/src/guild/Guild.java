@@ -366,6 +366,14 @@ public class Guild {
 		Print.printListWithListNumber(members);
 	}
 	
+	public void printPartyMemberLevelAndExp() {
+		List<Hero> members = getPartyMemberAll();
+		
+		for (Hero member : members) {
+			System.out.printf("이름: %s | 레벨: %d | 경험치: %d\n", member.getName(), member.getLevel(), member.getExp());
+		}
+	}
+
 	private void printPartyMemberAll() {
 		if (partyMembers.isEmpty()) {
 			System.out.println("파티원이 없습니다");
