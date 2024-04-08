@@ -28,16 +28,16 @@ public class Guild {
 
 	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
 	private int money = 10000;
-	private static int stageLevel = 1;
+	private int stageLevel = 1;
 	private List<Hero> members = new ArrayList<Hero>();
 	private List<Hero> partyMembers = new ArrayList<Hero>();
 	public Inventory inventory = new Inventory();
 
-	public static int getStageLevel() {
+	public int getStageLevel() {
 		return stageLevel;
 	}
 
-	public static void levelUpStageLevel() {
+	public void levelUpStageLevel() {
 		stageLevel++;
 	}
 	
@@ -66,6 +66,10 @@ public class Guild {
 		return money;
 	}
 	
+	public void setStageLevle(int stageLevel) {
+		this.stageLevel = stageLevel;
+	}
+
 	public void setMoney(int money) {
 		this.money = money;
 	}
