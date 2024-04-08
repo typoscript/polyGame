@@ -50,7 +50,7 @@ public class FileManager {
 		}
 	}
 	
-	public static String loadFile(String fileName) {
+	public static String getDataFromFile(String fileName) {
 		String data = "";
 
 		try {
