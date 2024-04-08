@@ -19,9 +19,7 @@ public class MonsterManager {
 		return instance;
 	}
 	
-	private MonsterManager() {
-		spawnMonsters(GameManager.getStageLevel());
-	}
+	private MonsterManager() { }
 	
 	public List<Unit> getMonsters() {
 		return monsters;
