@@ -128,6 +128,8 @@ public class StageBattle extends Stage {
 			System.out.println("파티원중 사망자가 있습니다");
 			return false;
 		}
+
+		return true;
 	}
 
 	@Override
@@ -139,10 +141,8 @@ public class StageBattle extends Stage {
 
 	@Override
 	public StageName run() {
-		if (Player.guild.isPartyEmpty()) {
-			System.out.println("파티원이 없습니다");
+		if (!isValidParty())
 			return StageName.LOBBY;
-		}
 
 		init();
 		
