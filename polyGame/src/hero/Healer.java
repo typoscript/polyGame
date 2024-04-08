@@ -11,7 +11,7 @@ public class Healer extends Hero implements Actionable {
 	private int healPower;
 
 	public Healer() {
-		name = "의사";
+		name = HeroNames.HEALER;
 		maxHp = 150;
 		hp = maxHp;
 		attackPower = 10;
