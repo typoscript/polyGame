@@ -3,8 +3,12 @@ package main;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
+
+import hero.Hero;
 
 public class FileManager {
+	private static String DATA_DIR = "src/data";
 	private static FileWriter fw;
 	private static FileReader fr;
 	private static BufferedReader br;
@@ -13,11 +17,11 @@ public class FileManager {
 		String data = "";
 
 		try {
-			fr = new FileReader(fileName);
+			fr = new FileReader(DATA_DIR + fileName);
 			br = new BufferedReader(fr);
 			
 			while (br.ready())
-				data += br.readLine();
+				data += br.readLine() + "\n";
 			
 			br.close();
 			fr.close();
