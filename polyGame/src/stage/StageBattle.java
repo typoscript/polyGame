@@ -16,18 +16,6 @@ public class StageBattle extends Stage {
 	private List<Hero> heroes = new ArrayList<Hero>();
 	private List<Unit> monsters = new ArrayList<Unit>();
 	
-	private void printUnitAll() {
-		System.out.println("== hereos ==");
-		for (Unit hero : heroes)
-			System.out.println(hero);
-		System.out.println("============");
-
-		System.out.println("== Monsters ==");
-		for (Unit monster : monsters)
-			System.out.println(monster);
-		System.out.println("==============");
-	}
-	
 	private Unit getRandomHero() {
 		int ranIdx = (int)(Math.random() * heroes.size());
 		return heroes.get(ranIdx);
@@ -38,12 +26,38 @@ public class StageBattle extends Stage {
 		return monsters.get(ranIdx);
 	}
 
+	private int getStageClearMoney() {
+		return Player.guild.getStageLevel() * 1000;
+	}
+	
+	private int getStageClearExp() {
+		return Player.guild.getStageLevel() * 10;
+	}
+	
+	private boolean isRunning() {
+		return heroes.size() > 0 && monsters.size() > 0;
+	}
+	
 	private boolean isGroupAllDead(List<Unit> group) {
 		for (Unit unit : group) {
 			if (!unit.isDead())
 				return false;
 		}
 		
+		return true;
+	}
+
+	private boolean isValidParty() {
+		if (Player.guild.isPartyEmpty()) {
+			System.out.println("파티원이 없습니다");
+			return false;
+		}
+		
+		if (Player.guild.isPartyMemberDead()) {
+			System.out.println("파티원중 사망자가 있습니다");
+			return false;
+		}
+
 		return true;
 	}
 	
@@ -62,6 +76,16 @@ public class StageBattle extends Stage {
 			System.out.println(hero.getName() + " 사망");
 	}
 
+	private void attackHeroesByMonsters() {
+		for (Unit monster : monsters) {
+			attackRandomHero(monster);
+			
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) { }
+		}
+	}
+	
 	private void takeTurnHeroes() {
 		for (Unit hero : heroes) {
 			if (!hero.isDead())
@@ -83,16 +107,6 @@ public class StageBattle extends Stage {
 		handleMonsterDead();
 	}
 	
-	private void attackHeroesByMonsters() {
-		for (Unit monster : monsters) {
-			attackRandomHero(monster);
-			
-			try {
-				Thread.sleep(500);
-			} catch (Exception e) { }
-		}
-	}
-	
 	private void handleMonsterDead() {
 		for (int i = 0; i < monsters.size(); i++) {
 			Unit monster = monsters.get(i);
@@ -100,18 +114,6 @@ public class StageBattle extends Stage {
 			if (monster.isDead())
 				monsters.remove(monster);
 		}
-	}
-	
-	private boolean isRunning() {
-		return heroes.size() > 0 && monsters.size() > 0;
-	}
-	
-	private int getStageClearMoney() {
-		return Player.guild.getStageLevel() * 1000;
-	}
-	
-	private int getStageClearExp() {
-		return Player.guild.getStageLevel() * 10;
 	}
 	
 	private void handleStageClear() {
@@ -125,18 +127,16 @@ public class StageBattle extends Stage {
 		Player.guild.printPartyMemberLevelAndExp();
 	}
 	
-	private boolean isValidParty() {
-		if (Player.guild.isPartyEmpty()) {
-			System.out.println("파티원이 없습니다");
-			return false;
-		}
-		
-		if (Player.guild.isPartyMemberDead()) {
-			System.out.println("파티원중 사망자가 있습니다");
-			return false;
-		}
+	private void printUnitAll() {
+		System.out.println("== hereos ==");
+		for (Unit hero : heroes)
+			System.out.println(hero);
+		System.out.println("============");
 
-		return true;
+		System.out.println("== Monsters ==");
+		for (Unit monster : monsters)
+			System.out.println(monster);
+		System.out.println("==============");
 	}
 
 	@Override
