@@ -53,11 +53,13 @@ public class StageBattle extends Stage {
 		
 		Unit hero = getRandomHero(); 
 		
-		while (hero.isDead()) {
+		while (hero.isDead())
 			hero = getRandomHero(); 
-		}
 
 		monster.attack(hero);
+		
+		if (hero.isDead())
+			System.out.println(hero.getName() + " 사망");
 	}
 
 	private void takeTurnHeroes() {
