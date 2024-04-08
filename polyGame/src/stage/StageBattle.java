@@ -50,8 +50,14 @@ public class StageBattle extends Stage {
 	private void attackRandomHero(Unit monster) {
 		if (isGroupAllDead((List)heroes))
 			return;
+		
+		Unit hero = getRandomHero(); 
+		
+		while (hero.isDead()) {
+			hero = getRandomHero(); 
+		}
 
-		monster.attack(getRandomHero());
+		monster.attack(hero);
 		
 		handleUnitDead();
 	}
@@ -74,7 +80,7 @@ public class StageBattle extends Stage {
 		else
 			hero.chooseAction(monster);
 		
-		handleUnitDead();
+		handleMonsterDead();
 	}
 	
 	private void attackHeroesByMonsters() {
@@ -87,21 +93,12 @@ public class StageBattle extends Stage {
 		}
 	}
 	
-	private void handleUnitDead() {
-		for (int i = 0; i < heroes.size(); i++) {
-			Unit hero = heroes.get(i);
-
-			if (hero.isDead())
-				System.out.printf("%s 사망\n", hero.getName());
-		}
-
+	private void handleMonsterDead() {
 		for (int i = 0; i < monsters.size(); i++) {
 			Unit monster = monsters.get(i);
 
-			if (monster.isDead()) {
+			if (monster.isDead())
 				monsters.remove(monster);
-				System.out.printf("%s 사망\n", monster.getName());
-			}
 		}
 	}
 	
