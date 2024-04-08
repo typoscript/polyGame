@@ -37,7 +37,7 @@ public class StageBattle extends Stage {
 		int ranIdx = (int)(Math.random() * monsters.size());
 		return monsters.get(ranIdx);
 	}
-	
+
 	private boolean isGroupAllDead(List<Unit> group) {
 		for (Unit unit : group) {
 			if (!unit.isDead())
@@ -48,7 +48,7 @@ public class StageBattle extends Stage {
 	}
 	
 	private void attackRandomHero(Unit monster) {
-		if (heroes.isEmpty())
+		if (isGroupAllDead((List)heroes))
 			return;
 
 		monster.attack(getRandomHero());
