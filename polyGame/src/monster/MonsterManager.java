@@ -7,6 +7,7 @@ import hero.Healer;
 import hero.Mage;
 import hero.Warrior;
 import main.GameManager;
+import main.Player;
 import main.Unit;
 
 public class MonsterManager {
@@ -30,7 +31,7 @@ public class MonsterManager {
 	}
 	
 	public void spawnMonsters() {
-		spawnMonsters(GameManager.getStageLevel());
+		spawnMonsters(Player.guild.getStageLevel());
 	}
 	
 	private void spawnMonsters(int monsterCount) {
