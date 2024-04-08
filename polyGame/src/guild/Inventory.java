@@ -200,6 +200,15 @@ public class Inventory {
 		}
 	}
 	
+	private void printItemAll() {
+		if (items.isEmpty()) {
+			System.out.println("아이템이 없습니다");
+			return;
+		}
+
+		Print.printListWithListNumber(items);
+	}
+	
 	private void printMenu() {
 		System.out.println("=== 인벤토리 ===");
 		System.out.println("1) 착용");
