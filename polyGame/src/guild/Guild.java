@@ -225,6 +225,9 @@ public class Guild {
 
 		String data = FileManager.getDataFromFile(FileManager.HERO_FILE_NAME);
 		
+		if (data.isEmpty())
+			return;
+		
 		String[] membersInfo = data.split("\n");
 		
 		for (String memberInfo : membersInfo) {
