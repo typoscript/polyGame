@@ -20,7 +20,7 @@ public class Inventory {
 	private final int MENU_ITEM_EQUIP = 1;
 	private final int MENU_ITEM_UNEQUIP = 2;
 	private final int MENU_GO_BACK = 0;
-	List<Item> items = new ArrayList<Item>();
+	private List<Item> items = new ArrayList<Item>();
 	
 	public List<Item> getItemAll() {
 		return items;
@@ -188,7 +188,7 @@ public class Inventory {
 					items.add(member.unEquipArmor());
 					System.out.println("방어구 벗기 성공");
 					return;
-				}
+			}
 		}
 	}
 	
