@@ -80,6 +80,9 @@ public class Inventory {
 				case MENU_ITEM_UNEQUIP:
 					runItemUnEquip();
 					break;
+				case MENU_ITEM_VIEW_ALL:
+					printItemAll();
+					break;
 				case MENU_GO_BACK:
 					return;
 			}
