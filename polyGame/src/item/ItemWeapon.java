@@ -1,7 +1,7 @@
 package item;
 
 public class ItemWeapon extends Item {
-	final int ATTACK_POWER;
+	public final int ATTACK_POWER;
 
 	public ItemWeapon(String name, int price, int attackPower) {
 		super(name, price);
