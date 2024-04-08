@@ -39,6 +39,15 @@ public class Guild {
 		return partyMembers.size() == 0;
 	}
 	
+	public boolean isPartyMemberDead() {
+		for (Hero member : partyMembers) {
+			if (member.isDead())
+				return true;
+		}
+		
+		return false;
+	}
+	
 	public int getMoney() {
 		return money;
 	}
