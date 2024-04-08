@@ -246,7 +246,7 @@ public class Guild {
 	
 	private void loadGuildDataFromFile() {
 		inventory.clearItems();
-		String data = FileManager.getDataFromFile(FileManager.HERO_FILE_NAME);
+		String data = FileManager.getDataFromFile(FileManager.GUILD_FILE_NAME);
 		
 		if (data.isEmpty())
 			return;
