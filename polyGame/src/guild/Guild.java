@@ -11,6 +11,8 @@ import hero.Warrior;
 
 import item.Item;
 import item.ItemArmor;
+import item.ItemHpPotion;
+import item.ItemType;
 import item.ItemWeapon;
 import main.FileManager;
 import main.Player;
@@ -66,7 +68,7 @@ public class Guild {
 		return money;
 	}
 	
-	public void setStageLevle(int stageLevel) {
+	public void setStageLevel(int stageLevel) {
 		this.stageLevel = stageLevel;
 	}
 
@@ -235,6 +237,43 @@ public class Guild {
 	public void increasePartyMembersExp(int exp) {
 		for (Hero member : partyMembers)
 			member.increaseExp(exp);
+	}
+	
+	private void loadGuildDataFromFile() {
+		inventory.clearItems();
+		String data = FileManager.getDataFromFile(FileManager.HERO_FILE_NAME);
+		
+		if (data.isEmpty())
+			return;
+		
+		String[] guildInfo = data.split("\n");
+		String[] stageAndMoney = guildInfo[0].split("/");
+		int stageLevel = Integer.parseInt(stageAndMoney[0]);
+		int money = Integer.parseInt(stageAndMoney[1]);
+		
+		setStageLevel(stageLevel);
+		setMoney(money);
+		
+		for (int i = 1; i < guildInfo.length; i++) {
+			String[] info = guildInfo[i].split("/");
+			
+			String type = info[0];
+			String name = info[1];
+			int price = Integer.parseInt(info[2]);
+			int stat = Integer.parseInt(info[3]);
+
+			switch (type) {
+				case (ItemType.WEAPON):
+					inventory.addItem(new ItemWeapon(name, price, stat));
+					break;
+				case (ItemType.ARMOR):
+					inventory.addItem(new ItemArmor(name, price, stat));
+					break;
+				case (ItemType.HP_POTION):
+					inventory.addItem(new ItemHpPotion(name, price, stat));
+					break;
+			}
+		}
 	}
 	
 	private void loadMembersFromFile() {
