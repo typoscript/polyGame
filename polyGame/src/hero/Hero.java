@@ -53,6 +53,19 @@ public abstract class Hero extends Unit {
 		return armor;
 	}
 	
+	public void levelUp() {
+		level++;
+		expMax *= 1.1;
+		exp = 0;
+	}
+	
+	public void gainExp(int exp) {
+		this.exp += exp;
+		
+		if (this.exp >= expMax)
+			levelUp();
+	}
+	
 	public String getStatusOfWearables() {
 		String statusWeapon = hasWeapon() ? "있음" : "없음";
 		String statusArmor = hasArmor() ? "있음" : "없음";
