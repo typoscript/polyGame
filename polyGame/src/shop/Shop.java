@@ -178,7 +178,7 @@ public class Shop {
 	}
 	
 	private void loadItemsFromFile() {
-		String fileData = FileManager.loadFile("src/item/items.txt"); // ok
+		String fileData = FileManager.loadFile("items.txt");
 		String[] items = fileData.split("\n");
 		
 		for (String item : items) {
