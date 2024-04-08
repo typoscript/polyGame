@@ -8,13 +8,14 @@ import java.util.List;
 import hero.Hero;
 
 public class FileManager {
+	public static final String HERO_FILE_NAME = "hero.txt";
+	public static final String SHOP_ITEM_FILE_NAME = "shop_items.txt";
 	private static String DATA_DIR = "src/data/";
 	private static FileWriter fw;
 	private static FileReader fr;
 	private static BufferedReader br;
 	
 	public static void saveHeroData() {
-		final String HERO_FILE_NAME = "hero.txt";
 		String data = "";
 
 		List<Hero> members = Player.guild.getMemberAll();
