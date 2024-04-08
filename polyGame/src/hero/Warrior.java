@@ -1,15 +1,22 @@
 package hero;
 
 import utils.Input;
+import item.ItemArmor;
+import item.ItemWeapon;
 import main.Player;
 import main.Unit;
+import main.UnitStatus;
 
 public class Warrior extends Hero implements Actionable {
 	public Warrior() {
-		name = "전사";
+		name = HeroNames.WARRIOR;
 		maxHp = 200;
 		hp = maxHp;
 		attackPower = 30;
+	}
+
+	public Warrior(String name, int level, int hp, int maxHp, int attackPower, int armorPower, int exp, UnitStatus status, boolean hasParty, ItemWeapon weapon, ItemArmor armor) {
+		super(name, level, hp, maxHp, attackPower, armorPower, exp, status, hasParty, weapon, armor);
 	}
 	
 	@Override
