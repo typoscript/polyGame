@@ -58,8 +58,6 @@ public class StageBattle extends Stage {
 		}
 
 		monster.attack(hero);
-		
-		handleUnitDead();
 	}
 
 	private void takeTurnHeroes() {
