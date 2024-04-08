@@ -59,7 +59,7 @@ public abstract class Hero extends Unit {
 		exp = 0;
 	}
 	
-	public void gainExp(int exp) {
+	public void increaseExp(int exp) {
 		this.exp += exp;
 		
 		if (this.exp >= expMax)
