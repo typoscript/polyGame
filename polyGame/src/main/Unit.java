@@ -58,7 +58,7 @@ public abstract class Unit {
 	
 	@Override
 	public String toString() {
-		return String.format("%s | HP: %d | 공격력: %d | 상태: %s", name, hp, attackPower, status);
+		return String.format("%s | HP: %d | 공격력: %d | 방어력: %d | 상태: %s", name, hp, attackPower, armorPower, status);
 	}
 
 	abstract public void attack(Unit target);
