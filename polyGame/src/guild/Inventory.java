@@ -22,6 +22,10 @@ public class Inventory {
 	private final int MENU_GO_BACK = 0;
 	private List<Item> items = new ArrayList<Item>();
 	
+	public void clearItems() {
+		items.clear();
+	}
+	
 	public List<Item> getItemAll() {
 		return items;
 	}
