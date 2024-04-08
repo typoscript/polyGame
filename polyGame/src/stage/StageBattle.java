@@ -130,8 +130,9 @@ public class StageBattle extends Stage {
 		if (heroes.size() == 0) {
 			GameManager.isRunning = false;
 		} else {
-			GameManager.levelUpStageLevel();
 			int money = getStageClearMoney();
+			GameManager.levelUpStageLevel();
+
 			Player.guild.addMoney(money);
 			System.out.println("스테이지 클리어 상금: " + money);
 		}
