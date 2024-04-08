@@ -13,6 +13,7 @@ import item.Item;
 import item.ItemArmor;
 import item.ItemWeapon;
 import main.FileManager;
+import main.Player;
 import main.UnitStatus;
 import utils.Input;
 import utils.Print;
@@ -27,9 +28,18 @@ public class Guild {
 
 	private final int MAX_NUM_OF_PARTY_MEMBERS = 3;
 	private int money = 10000;
+	private static int stageLevel = 1;
 	private List<Hero> members = new ArrayList<Hero>();
 	private List<Hero> partyMembers = new ArrayList<Hero>();
 	public Inventory inventory = new Inventory();
+
+	public static int getStageLevel() {
+		return stageLevel;
+	}
+
+	public static void levelUpStageLevel() {
+		stageLevel++;
+	}
 	
 	public List<Hero> getMemberAll() {
 		return members;
@@ -54,6 +64,10 @@ public class Guild {
 	
 	public int getMoney() {
 		return money;
+	}
+	
+	public void setMoney(int money) {
+		this.money = money;
 	}
 	
 	public void addMoney(int money) {
@@ -219,7 +233,7 @@ public class Guild {
 			member.increaseExp(exp);
 	}
 	
-	public void loadMembersFromFile() {
+	private void loadMembersFromFile() {
 		members = new ArrayList<Hero>();
 		partyMembers = new ArrayList<Hero>();
 
