@@ -21,6 +21,8 @@ public class FileManager {
 		
 		for (int i = 0; i < members.size(); i++) {
 			Hero hero = members.get(i);
+			String weaponName = hero.getWeapon() == null ? "NONE" : hero.getWeapon().NAME;
+			String armorName = hero.getArmor() == null ? "NONE" : hero.getArmor().NAME;
 
 			data += hero.getName() + "/" +
 					hero.getLevel() + "/" +
@@ -31,8 +33,8 @@ public class FileManager {
 					hero.getStatus() + "/" +
 					hero.getExp() + "/" +
 					hero.hasParty() + "/" +
-					hero.getWeapon().NAME + "/" +
-					hero.getArmor().NAME;
+					weaponName + "/" +
+					armorName;
 			
 			if (i < members.size() - 1)
 				data += "\n";
