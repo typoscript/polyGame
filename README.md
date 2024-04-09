@@ -72,5 +72,10 @@
 
 </br>
 
-### 데모 영상
-![a](https://github.com/typoscript/polyGame/blob/main/images/demo.gif)
+### 전투 영상
+![a](https://github.com/typoscript/polyGame/blob/main/images/battle.gif)
+
+</br>
+
+### 상점 영상
+![a](https://github.com/typoscript/polyGame/blob/main/images/market.gif)
