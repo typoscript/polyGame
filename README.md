@@ -68,8 +68,23 @@
 - 특징: 공격 시, 50% 확률로 공격력이 2배 혹은 0으로 공격.</br>
 </br>
 
-### UML Class Diagram
-<img src="https://github.com/typoscript/polyGame/blob/main/images/class_diagram.jpg" />
+### Unit Class Diagram
+<img src="https://github.com/typoscript/polyGame/blob/main/images/class_diagram_unit.jpg" />
+
+</br>
+
+### Item Class Diagram
+<img src="https://github.com/typoscript/polyGame/blob/main/images/class_diagram_item.jpg" />
+
+</br>
+
+### Stage Class Diagram
+<img src="https://github.com/typoscript/polyGame/blob/main/images/class_diagram_stage.jpg" />
+
+</br>
+
+### Battle FlowChart
+<img src="https://github.com/typoscript/polyGame/blob/main/images/flowchart_battle.jpg" />
 
 </br>
 
