@@ -115,7 +115,7 @@ public class FileManager {
 			br.close();
 			fr.close();
 		} catch (Exception e) {
-			System.out.println("파일 로드 실패");
+			System.out.println("파일 로드 실패: " + fileName);
 		}
 		
 		return data;
