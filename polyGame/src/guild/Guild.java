@@ -140,10 +140,12 @@ public class Guild {
 	}
 	
 	public void hireHeroAsMember() {
+		final int heroPrice = 1000;
 		int numOfHeroes = 3;
 		List<Hero> heroes = getRandomHeroes(numOfHeroes);
 		
 		Print.printListWithListNumber(heroes);
+		System.out.printf("용병 가격: " + heroPrice);
 		int heroIndex = Input.getInputNumber("고용할 용병의 숫자: ") - 1;
 
 		if (heroIndex < 0 || heroIndex >= heroes.size()) {
