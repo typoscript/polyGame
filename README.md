@@ -77,5 +77,5 @@
 
 </br>
 
-### 상점 영상
+### 정비 영상
 ![a](https://github.com/typoscript/polyGame/blob/main/images/market.gif)
